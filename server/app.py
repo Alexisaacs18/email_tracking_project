@@ -10,7 +10,7 @@ def emails():
 
         emails = Emails.query.all()
 
-        emails_to_dict = [email.to_dict() for email in emails]
+        emails_to_dict = [email.to_dict(rules = ("-reply", )) for email in emails]
 
         response = make_response(
             emails_to_dict,
@@ -51,7 +51,7 @@ def replies():
 
     replies = Reply.query.all()
 
-    replies_to_dict = [reply.to_dict() for reply in replies]
+    replies_to_dict = [reply.to_dict(rules = ("-email", "-recipient" ) ) for reply in replies]
 
     response = make_response(
         replies_to_dict,
@@ -65,7 +65,7 @@ def recipients():
 
     recipients = Recipient.query.all()
 
-    recipients_to_dict = [recipient.to_dict() for recipient in recipients]
+    recipients_to_dict = [recipient.to_dict(rules = ("-company", "-reply")) for recipient in recipients]
 
     response = make_response(
         recipients_to_dict,
@@ -79,7 +79,7 @@ def companies():
 
     companies = Company.query.all()
 
-    companies_to_dict = [company.to_dict() for company in companies]
+    companies_to_dict = [company.to_dict(rules = ("-recipient", )) for company in companies]
 
     response = make_response(
         companies_to_dict,
