@@ -46,7 +46,7 @@ class Reply(db.Model, SerializerMixin):
 
     #adds relationships
     recipient = db.relationship('Recipient', back_populates = 'reply')
-    email = db.relationship('Email', back_populates = 'reply')
+    email = db.relationship('Emails', back_populates = 'reply')
 
     #adds serialization rules
     serialize_rules = ('-emails.reply', '-recipient.reply')
