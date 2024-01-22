@@ -1,4 +1,5 @@
 import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 function App() {
   const url = "http://localhost:3001"
@@ -29,6 +30,30 @@ function App() {
     </div>
   );
 }
+
+// Configure our Router
+const router = createBrowserRouter([
+  {
+    path: "/",
+    // Props to Home gets passed here
+    element: <Home />
+  },
+  {
+    path: "/Replies",
+    // Props to Replies gets passed here
+    element: <Replies />
+  },
+  {
+    path: "/Statistics",
+    // Props to Statistics gets passed here
+    element: <Statistics />
+  },
+  {
+    path: "/Companies",
+    // Props to Companies gets passed here
+    element: <Companies />
+  },
+]);
 
 function NavBar(){
     return(
