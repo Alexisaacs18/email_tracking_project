@@ -15,7 +15,7 @@ class Emails(db.Model, SerializerMixin):
     number_unsubscribed = db.Column(db.Integer)
 
     #adds relationships
-    reply = db.relationship('Reply', back_populates = 'reply')
+    reply = db.relationship('Reply', back_populates = 'emails')
 
     #adds serialization rules
     serialize_rules = ('-reply.emails', )
