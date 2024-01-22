@@ -31,3 +31,7 @@ Sales enablement software for representatives to track email statistics.
 1. Search bar for emails.
 2. Representatives can track company-wide statistics for emails.
 3. Add representatives to track personal emails and statistics.
+
+## KanBan Board
+
+![KanBan](pictures/kanban.png)
