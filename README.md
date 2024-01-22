@@ -20,7 +20,7 @@ Sales enablement software for representatives to track email statistics.
 
 ## Schema (Relationships, columns, validations)
 
-![Schema](pictures/schema.png)
+![Schema](pictures/image.png)
 
 ## API Routes
 
