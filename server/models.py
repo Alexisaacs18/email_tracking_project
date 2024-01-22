@@ -26,9 +26,9 @@ class Recipient(db.Model, SerializerMixin):
     __tablename__ = "recipient"
 
     id = db.Column(db.Integer, primary_key = True)
-    company_id = db.Column(db.Integer, db.ForeignKey(""))
-    email_address = id.Column(db.String)
-    contact = id.Column(db.String)
+    company_id = db.Column(db.Integer, db.ForeignKey("company.id"))
+    email_address = db.Column(db.String)
+    contact = db.Column(db.String)
 
 class Company(db.Model, SerializerMixin):
     __tablename__ = "company"
