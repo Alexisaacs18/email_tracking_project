@@ -1,7 +1,7 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import MainPage from './components/MainPage'
+import MainPage from './components/home/Home'
 function App() {
   const url = "http://localhost:3001"
   const [emails, setEmails] = useState([])
