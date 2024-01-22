@@ -8,8 +8,8 @@ class Emails(db.Model, SerializerMixin):
     __tablename__ = "email_template"
 
     id = db.Column(db.Integer, primary_key = True)
-    subject = db.Column(db.String)
-    body = db.Column(db.String)
+    subject = db.Column(db.String, nullable=False)
+    body = db.Column(db.String, nullable=False)
     number_sent = db.Column(db.Integer)
     number_replied = db.Column(db.Integer)
     number_unsubscribed = db.Column(db.Integer)
@@ -23,14 +23,21 @@ class Emails(db.Model, SerializerMixin):
     #validations
     @validates('number_sent')
     def validates_number_sent(self, key, value):
-        if value > 0:
+        if value > -1:
             return value
         else:
             raise ValueError
         
     @validates('number_replies')
     def validates_number_replies(self, key, value):
-        if value > 0:
+        if value > -1:
+            return value
+        else:
+            raise ValueError
+        
+    @validates('unsubscribed')
+    def validates_unsubscribed(self, key, value):
+        if value > -1:
             return value
         else:
             raise ValueError
@@ -56,8 +63,8 @@ class Recipient(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key = True)
     company_id = db.Column(db.Integer, db.ForeignKey("company.id"))
-    email_address = db.Column(db.String)
-    contact = db.Column(db.String)
+    email_address = db.Column(db.String, nullable=False)
+    contact = db.Column(db.String, nullable=False)
 
     #adds relationships
     reply = db.relationship('Reply', back_populates = 'recipient')
@@ -70,9 +77,9 @@ class Company(db.Model, SerializerMixin):
     __tablename__ = "company"
 
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String)
-    employees = db.Column(db.String)
-    revenue = db.Column(db.String)
+    name = db.Column(db.String, nullable=False)
+    employees = db.Column(db.String, nullable=False)
+    revenue = db.Column(db.String, nullable=False)
 
     #adds relationships
     recipient = db.relationship('Recipient', back_populates = 'company')
