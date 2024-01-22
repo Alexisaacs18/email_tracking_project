@@ -15,10 +15,26 @@ class Emails(db.Model, SerializerMixin):
     number_unsubscribed = db.Column(db.Integer)
 
     #adds relationships
-    reply = db.relationship('Reply', back_populates = 'emails')
+    reply = db.relationship('Reply', back_populates = 'email')
 
     #adds serialization rules
-    serialize_rules = ('-reply.emails', )
+    serialize_rules = ('-reply.email', )
+
+    #validations
+    @validates('number_sent')
+    def validates_number_sent(self, key, value):
+        if value > 0:
+            return value
+        else:
+            raise ValueError
+        
+    @validates('number_replies')
+    def validates_number_replies(self, key, value):
+        if value > 0:
+            return value
+        else:
+            raise ValueError
+
 
 class Reply(db.Model, SerializerMixin):
     __tablename__ = "reply"
