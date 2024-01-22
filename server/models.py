@@ -14,6 +14,12 @@ class Emails(db.Model, SerializerMixin):
     number_replied = db.Column(db.Integer)
     number_unsubscribed = db.Column(db.Integer)
 
+    #adds relationships
+    reply = db.relationship('Reply', back_populates = 'reply')
+
+    #adds serialization rules
+    serialize_rules = ('-reply.emails', )
+
 class Reply(db.Model, SerializerMixin):
     __tablename__ = "reply"
 
@@ -21,6 +27,13 @@ class Reply(db.Model, SerializerMixin):
     email_template_id = db.Column(db.Integer, db.ForeignKey("email_template.id"))
     recipient_id = db.Column(db.Integer, db.ForeignKey("recipient.id"))
     tone = db.Column(db.Boolean)
+
+    #adds relationships
+    recipient = db.relationship('Recipient', back_populates = 'reply')
+    email = db.relationship('Email', back_populates = 'reply')
+
+    #adds serialization rules
+    serialize_rules = ('-emails.reply', '-recipient.reply')
 
 class Recipient(db.Model, SerializerMixin):
     __tablename__ = "recipient"
@@ -30,6 +43,13 @@ class Recipient(db.Model, SerializerMixin):
     email_address = db.Column(db.String)
     contact = db.Column(db.String)
 
+    #adds relationships
+    reply = db.relationship('Reply', back_populates = 'recipient')
+    company = db.relationship('Company', back_populates = 'recipient')
+
+    #adds serialization rules
+    serialize_rules = ('-reply.recipient', '-company.recipient')
+
 class Company(db.Model, SerializerMixin):
     __tablename__ = "company"
 
@@ -37,3 +57,9 @@ class Company(db.Model, SerializerMixin):
     name = db.Column(db.String)
     employees = db.Column(db.String)
     revenue = db.Column(db.String)
+
+    #adds relationships
+    recipient = db.relationship('Recipient', back_populates = 'company')
+
+    #adds serialization rules
+    serialize_rules = ('-recipient.company', )
