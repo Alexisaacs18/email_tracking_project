@@ -15,10 +15,10 @@ class Emails(db.Model, SerializerMixin):
     number_unsubscribed = db.Column(db.Integer)
 
     #adds relationships
-    reply = db.relationship('Reply', back_populates = 'emails')
+    reply = db.relationship('Reply', back_populates = 'email')
 
     #adds serialization rules
-    serialize_rules = ('-reply.emails', )
+    serialize_rules = ('-reply.email', )
 
 class Reply(db.Model, SerializerMixin):
     __tablename__ = "reply"
@@ -30,7 +30,7 @@ class Reply(db.Model, SerializerMixin):
 
     #adds relationships
     recipient = db.relationship('Recipient', back_populates = 'reply')
-    email = db.relationship('Email', back_populates = 'reply')
+    email = db.relationship('Emails', back_populates = 'reply')
 
     #adds serialization rules
     serialize_rules = ('-emails.reply', '-recipient.reply')
