@@ -1,9 +1,11 @@
 import React from 'react'
-function EmailBody(){
+import {showComponent,setShowComponent} from './EmailCard'
+function EmailBody({title}){
     return(
       <div id= 'emailbody'>
-        <p>This is the email body</p>
-        <p>Cash App:$Snackpack818</p>
+        <div id ='title'><p>{title}</p></div>
+        <div id ='subject'></div>
+        <div id ='body'></div>
       </div>
     )
   }

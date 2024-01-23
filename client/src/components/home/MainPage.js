@@ -15,12 +15,15 @@ function MainPage() {
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
-
+  const [showComponent, setShowComponent] = useState(false);
+  const toggleComponent = () => {
+      setShowComponent(!showComponent);
+    };
   return (
     <div>
       <div><NavBar /></div>
-      <div><SideBar emails={emails} /></div>
-      <div><EmailBody /></div>
+      <div><SideBar emails={emails} toggleComponent={toggleComponent} /></div>
+      <div> {showComponent && <EmailBody/>}</div>
     </div>
   )
 }

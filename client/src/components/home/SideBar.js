@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import EmailCard from './EmailCard'
-function SideBar({ emails }) {
+function SideBar({ emails,toggleComponent }) {
   const [search, setSearch] = useState('')
 
   const filtered = emails.filter(email => email.email_title.toUpperCase().includes(search.toUpperCase()))
@@ -8,6 +8,7 @@ function SideBar({ emails }) {
   const updateSearch = (e) => {
     setSearch(e.target.value)
   }
+
   return (
     <nav id='sidebar'>
       <ul>
@@ -22,6 +23,7 @@ function SideBar({ emails }) {
               sent={email.number_sent}
               unsubscribed={email.number_unsubscribed}
               subject={email.subject}
+              toggleComponent = {toggleComponent}
             />
           );
         })}

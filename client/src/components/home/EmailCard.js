@@ -1,9 +1,20 @@
-import React from 'react'
-function EmailCard({ title }) {
+import React, {useState} from 'react'
+import EmailBody from './EmailBody'
+function EmailCard({ title ,toggleComponent}) {
+  
+
+
+
+
   return (
-    <li className='email'>
+    <div onClick={toggleComponent}>
+    <li className='email'  >
       <p>{title}</p>
     </li>
+   
+    
+    </div>
+
   )
 }
 export default EmailCard;
