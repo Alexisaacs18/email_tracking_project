@@ -144,3 +144,15 @@ border-color: black;
   
 }
 
+#statslist{
+  list-style:none;
+}
+
+.statscard{
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+  margin-left: 0;
+  margin-bottom: 1px;
+  padding:20px;
+  border-color: black;
+}
