@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
         emails = [
             Emails(
-                email_title = "Cold email 1",
+                email_title = "Cold Email Data",
                 subject = "Email Data Question",
                 body = """
                 Hi [first name],
@@ -42,7 +42,7 @@ if __name__ == '__main__':
                 number_unsubscribed = 0
             ),
             Emails(
-                email_title = "Cold email 2",
+                email_title = "Cold email",
                 subject = "Reply Rate Question",
                 body = """
                 Hi [first name],
@@ -54,7 +54,7 @@ if __name__ == '__main__':
                 number_unsubscribed = 3
             ),
             Emails(
-                email_title = "Cold email 3",
+                email_title = "Cold email",
                 subject = "Unsubscribe Issues",
                 body = """
                 Hi [first name],

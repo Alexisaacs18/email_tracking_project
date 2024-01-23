@@ -1,9 +1,9 @@
 import React from 'react'
-function EmailCard({email}){
-    return(
-      <li className = 'email'>
-        <p>{email.name}</p>
-      </li>
-    )
+function EmailCard({ title }) {
+  return (
+    <li className='email'>
+      <p>{title}</p>
+    </li>
+  )
 }
 export default EmailCard;
