@@ -5,6 +5,7 @@
 .appDark{
   background-color: black;
   color: white;
+  
 }
 .appDark .navbar{
 background-color: black;
@@ -146,7 +147,9 @@ border-color: black;
 
 #statslist{
   list-style:none;
+  
 }
+
 
 .statscard{
   background-color: white;
