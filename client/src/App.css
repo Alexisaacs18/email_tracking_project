@@ -1,7 +1,39 @@
 #app-container {
   background-color: white;
   display: flexbox;
-  
+}
+.appDark{
+  background-color: black;
+  color: white;
+}
+.appDark .navbar{
+background-color: black;
+color:white;
+border-bottom: 1px solid grey;
+}
+.appDark .navbar button{
+  background-color: black;
+  color:white;
+  border-color: grey;
+}
+.appDark #sidebar{
+  background-color: black;
+  border-color: grey;
+}
+.appDark #sidebar .email{
+  background-color: black;
+  border-color: grey;
+  box-shadow: 0 1px 1px grey;
+}
+.appDark #emailbody{
+  background-color: black;
+  color: white;
+  border-color: grey;
+}
+.appDark #searchbar{
+  background-color: black;
+  color: white;
+  border-color: grey;
 }
 
 body{
