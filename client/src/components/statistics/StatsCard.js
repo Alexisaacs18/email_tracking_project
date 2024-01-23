@@ -1,9 +1,9 @@
 import React from "react";
 
-function StatsCard({ email }) {
+function StatsCard({ email, name }) {
 return(
     <div className = "statscard">
-        <li>{email.name}</li>
+        <li>{name}</li>
     </div>
 )}
 

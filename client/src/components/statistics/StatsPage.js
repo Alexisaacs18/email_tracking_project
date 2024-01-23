@@ -16,12 +16,21 @@ function StatsPage(){
           .catch((error) => console.error("Error fetching data:", error));
       }, []);
 
+    const[search,setSearch] = useState('')
+
+    const filtered = emails.filter(email => email.name.toUpperCase().includes(search.toUpperCase()))
+    
+    const updateSearch = (e) => {
+        setSearch(e.target.value)
+    }
+
     return(
         <div>
             <StatsNav/>
             <ul id="statslist">
-            {emails.map((email) => {return(
-                <StatsCard email={email}/>
+                <input placeholder="search" className="searchbar" value={search} onChange={updateSearch}></input>
+            {filtered && filtered.map((email) => {return(
+                <StatsCard email={filtered} key={email.id} name={email.name}/>
             )})}
             </ul>
             </div>
