@@ -42,7 +42,7 @@ if __name__ == '__main__':
                 number_unsubscribed = 0
             ),
             Emails(
-                email_title = "Cold email",
+                email_title = "Cold: Reply Rate",
                 subject = "Reply Rate Question",
                 body = """
                 Hi [first name],
@@ -65,7 +65,7 @@ if __name__ == '__main__':
                 number_unsubscribed = 3
             ),
             Emails(
-                email_title = "Cold email",
+                email_title = "Cold: Unsubscribe Issues",
                 subject = "Unsubscribe Issues",
                 body = """
                 Hi [first name],
