@@ -5,4 +5,4 @@ function CompaniesPage(){
         <div><CompaniesNav/></div>
     )
 }
-export default CompaniesPage()
+export default CompaniesPage;

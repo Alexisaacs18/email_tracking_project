@@ -8,13 +8,13 @@ function ReplyNav(){
       navigate('/')
     };
     const navigateToReplies = () => {
-      navigate('ReplyPage')
+      navigate('/ReplyPage')
     };
     const navigateToStatistics = () => {
-      navigate('ReplyPage')
+      navigate('/Statistics')
     };
     const navigateToCompanies = () => {
-      navigate('ReplyPage')
+      navigate('/Companies')
     };
 
     return(

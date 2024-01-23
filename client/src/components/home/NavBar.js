@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function NavBar(){
   const navigate = useNavigate();
@@ -8,13 +8,14 @@ function NavBar(){
       navigate('/')
     };
     const navigateToReplies = () => {
-      navigate('ReplyPage')
+      navigate('/')
+      navigate('/ReplyPage')
     };
     const navigateToStatistics = () => {
-      navigate('ReplyPage')
+      navigate('/Statistics')
     };
     const navigateToCompanies = () => {
-      navigate('ReplyPage')
+      navigate('/Companies')
     };
 
     return(

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate} from "react-router-dom";
 
-function CompaniesNav(){
+function StatsNav(){
   const navigate = useNavigate();
   
     const navigateToHome = () => {
@@ -29,4 +29,4 @@ function CompaniesNav(){
       </ul>
       </nav>
   )}
-export default CompaniesNav;
+export default StatsNav;

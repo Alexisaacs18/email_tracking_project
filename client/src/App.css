@@ -3,10 +3,12 @@
   display: flexbox;
   
 }
+
 body{
   overflow-y: hidden;
   overflow-x: hidden;
 }
+
 .navbar {
   background-color: white; /* Set background color */
   overflow-x: hidden; /* Clear floats */
@@ -37,8 +39,6 @@ body{
  
 }
 
-
-
 .navbar button {
   border-color: black;
   background-color: white;
@@ -46,12 +46,14 @@ body{
   height:40px;
   text-align: center;
 }
+
 .navbar button:hover {
   background-color: rgb(235, 238, 238); /* Change background color on hover */
   color: black;
   transform: scale(1.05); /* Scale up the email on hover */
 
 }
+
 #sidebar{
   overflow-y: auto;
   overflow-x: hidden;
@@ -62,12 +64,14 @@ body{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
   border: 1px solid black;
 }
+
 #sidebar ul {
   list-style-type:none;
   margin-left: 0;
   padding:0;
   margin-top: 0;
 }
+
 .email{
 background-color: white;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
@@ -77,6 +81,7 @@ padding:20px;
 border-color: black;
 
 }
+
 .email:hover{
   background-color: lightgrey; /* Change background color on hover */
   color: whitesmoke;
@@ -100,6 +105,7 @@ border-color: black;
   text-align: center;
   
 }
+
 #searchbar{
   width:243px;
   height:25px;
