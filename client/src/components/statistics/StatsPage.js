@@ -19,7 +19,7 @@ function StatsPage(){
     return(
         <div>
             <StatsNav/>
-            <ul>
+            <ul id="statslist">
             {emails.map((email) => {return(
                 <StatsCard email={email}/>
             )})}
