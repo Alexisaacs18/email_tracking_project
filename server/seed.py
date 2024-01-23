@@ -19,25 +19,47 @@ if __name__ == '__main__':
 
         emails = [
             Emails(
-                subject = "A",
-                body = "A",
-                number_sent = 5,
-                number_replied = 1,
-                number_unsubscribed = 2
-            ),
-            Emails(
-                subject = "B",
-                body = "B",
-                number_sent = 6,
+                subject = "Email Data Question",
+                body = """
+                Hi [first name],
+
+                Since the unsubscribe requirements from Google,
+                52% of tier 2 tech companies report lack of
+                visibility over their cold email data.
+
+                Oracle reported a 36% decrease in unsubscribed emails
+                since using Email Trace.
+
+                Would you be open to discussing this?
+
+                Best,
+
+                Alex Isaacs
+                """,
+                number_sent = 8,
                 number_replied = 2,
                 number_unsubscribed = 0
             ),
             Emails(
-                subject = "C",
-                body = "C",
-                number_sent = 10,
-                number_replied = 3,
-                number_unsubscribed = 4
+                subject = "Reply Rate Question",
+                body = """
+                Hi [first name],
+
+
+                """,
+                number_sent = 6,
+                number_replied = 1,
+                number_unsubscribed = 3
+            ),
+            Emails(
+                subject = "Unsubscribe Issues",
+                body = """
+                Hi [first name],
+
+                """,
+                number_sent = 7,
+                number_replied = 2,
+                number_unsubscribed = 3
             ),
         ]
 
@@ -46,9 +68,19 @@ if __name__ == '__main__':
 
         companies = [
             Company(
-                name = "A",
-                employees = "11-50",
-                revenue = "1-5 M"
+                name = "Salesforce",
+                employees = "10k+",
+                revenue = "$31.4 B"
+            ),
+            Company(
+                name = "Intel",
+                employees = "10k+",
+                revenue = "$15.6 B"
+            ),
+            Company(
+                name = "Adobe",
+                employees = "10k+",
+                revenue = "$19.4 B"
             )
         ]
 
@@ -58,9 +90,49 @@ if __name__ == '__main__':
         recipients = [
             Recipient(
                 company_id = companies[0].id,
-                email_address = "something@gmail.com",
-                contact = "somebody"
-            )
+                email_address = "jtaylor@salesforce.com",
+                contact = "Justin Taylor"
+            ),
+            Recipient(
+                company_id = companies[0].id,
+                email_address = "cspencer@salesforce.com",
+                contact = "Cody Spencer"
+            ),
+            Recipient(
+                company_id = companies[0].id,
+                email_address = "crodriguez@salesforce.com",
+                contact = "Casey Rodriguez"
+            ),
+            Recipient(
+                company_id = companies[1].id,
+                email_address = "atupey@intel.com",
+                contact = "Anne Tupey"
+            ),
+            Recipient(
+                company_id = companies[1].id,
+                email_address = "jfisher@intel.com",
+                contact = "Jay Fisher"
+            ),
+            Recipient(
+                company_id = companies[1].id,
+                email_address = "asmith@intel.com",
+                contact = "Andre Smith"
+            ),
+            Recipient(
+                company_id = companies[2].id,
+                email_address = "jtran@adobe.com",
+                contact = "Josh Tran"
+            ),
+            Recipient(
+                company_id = companies[2].id,
+                email_address = "jpartridge@adobe.com",
+                contact = "Julia Partridge"
+            ),
+            Recipient(
+                company_id = companies[2].id,
+                email_address = "misaacs@adobe.com",
+                contact = "Max Isaacs"
+            ),
         ]
 
         db.session.add_all(recipients)
@@ -70,6 +142,26 @@ if __name__ == '__main__':
             Reply(
                 email_template_id = emails[0].id,
                 recipient_id = recipients[0].id,
+                tone = True
+            ),
+            Reply(
+                email_template_id = emails[0].id,
+                recipient_id = recipients[3].id,
+                tone = True
+            ),
+            Reply(
+                email_template_id = emails[1].id,
+                recipient_id = recipients[7].id,
+                tone = False
+            ),
+            Reply(
+                email_template_id = emails[2].id,
+                recipient_id = recipients[1].id,
+                tone = True
+            ),
+            Reply(
+                email_template_id = emails[2].id,
+                recipient_id = recipients[5].id,
                 tone = True
             )
         ]
