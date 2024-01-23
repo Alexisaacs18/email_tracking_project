@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import EmailCard from './EmailCard'
 function SideBar({emails}){
   const[search,setSearch] = useState('')
