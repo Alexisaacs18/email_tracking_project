@@ -5,8 +5,10 @@ import MainPage from './components/home/MainPage'
 
 
 function App() {
+  
   const url = "http://localhost:3001"
   const [emails, setEmails] = useState([])
+  
   useEffect(() => {
     console.log("Fetching emails...")
     fetch(url + "/emails")
