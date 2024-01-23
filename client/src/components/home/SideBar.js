@@ -17,6 +17,11 @@ function SideBar({ emails }) {
             <EmailCard
               title={email.email_title}
               key={email.id}
+              body={email.body}
+              replied={email.number_replied}
+              sent={email.number_sent}
+              unsubscribed={email.number_unsubscribed}
+              subject={email.subject}
             />
           );
         })}
