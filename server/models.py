@@ -8,6 +8,7 @@ class Emails(db.Model, SerializerMixin):
     __tablename__ = "email_template"
 
     id = db.Column(db.Integer, primary_key = True)
+    email_title = db.Column(db.String, nullable=False)
     subject = db.Column(db.String, nullable=False)
     body = db.Column(db.String, nullable=False)
     number_sent = db.Column(db.Integer)
