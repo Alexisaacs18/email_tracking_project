@@ -28,7 +28,7 @@ function StatsPage(){
         <div>
             <StatsNav/>
             <ul id="statslist">
-                <input placeholder="search" className="searchbar" value={search} onChange={updateSearch}></input>
+                <input placeholder="search" id="statssearchbar" value={search} onChange={updateSearch}></input>
             {filtered && filtered.map((email) => {return(
                 <StatsCard email={filtered} key={email.id} name={email.name}/>
             )})}
