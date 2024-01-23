@@ -13,22 +13,15 @@ function SideBar({ emails,toggleComponent }) {
     <nav id='sidebar'>
       <ul>
         <input placeholder='search' id='searchbar' value={search} onChange={updateSearch}></input>
-        {filtered && filtered.map((email) => {
-          return (
-            <EmailCard
-              title={email.email_title}
-              key={email.id}
-              body={email.body}
-              replied={email.number_replied}
-              sent={email.number_sent}
-              unsubscribed={email.number_unsubscribed}
-              subject={email.subject}
-              toggleComponent = {toggleComponent}
-            />
-          );
-        })}
+        {filtered.map((email) => (
+          <EmailCard
+            key={email.id}
+            email={email}
+            toggleComponent={toggleComponent}
+          />
+        ))}
       </ul>
     </nav>
-  )
+  );
 }
 export default SideBar;
