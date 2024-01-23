@@ -1,14 +1,13 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
-function NavBar(){
+function CompaniesNav(){
   const navigate = useNavigate();
   
     const navigateToHome = () => {
       navigate('/')
     };
     const navigateToReplies = () => {
-      navigate('/')
       navigate('/ReplyPage')
     };
     const navigateToStatistics = () => {
@@ -19,7 +18,7 @@ function NavBar(){
     };
 
     return(
-      <nav className = 'navbar'> 
+      <nav className ='navbar'> 
       <ul>
         <li><p>Email Tracker</p></li>
         <li><button onClick={navigateToHome}>Home</button></li>
@@ -30,4 +29,4 @@ function NavBar(){
       </ul>
       </nav>
   )}
-export default NavBar;
+export default CompaniesNav;
