@@ -37,7 +37,6 @@ border-bottom: 1px solid grey;
 }
 
 body{
-  overflow-y: hidden;
   overflow-x: hidden;
 }
 
@@ -141,6 +140,26 @@ border-color: black;
 #searchbar{
   width:243px;
   height:25px;
-  
 }
 
+#statslist{
+  list-style:none;
+  overflow-y:visible;
+}
+
+.statscard{
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+  margin-left: 0;
+  margin-bottom: 3px;
+  padding:20px;
+  border-color: black;
+}
+
+#statssearchbar{
+  width:20vw;
+  height:3vh;
+  border-color: black;
+  background-color: white;
+  color: black;
+}
