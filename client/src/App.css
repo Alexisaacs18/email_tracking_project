@@ -7,7 +7,7 @@ body{
   overflow-y: hidden;
   overflow-x: hidden;
 }
-#navbar {
+.navbar {
   background-color: white; /* Set background color */
   overflow-x: hidden; /* Clear floats */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
@@ -18,7 +18,7 @@ body{
   
 }
 
-#navbar ul {
+.navbar ul {
   list-style-type: none;
   margin: 0;
   padding-top: 10px;
@@ -30,7 +30,7 @@ body{
 } 
 
 
-#navbar li {
+.navbar li {
   float: none; /* Remove the float to center the list items */
    /* Display list items inline */
   margin-right: 40px; /* Add some space between items if needed */
@@ -39,14 +39,14 @@ body{
 
 
 
-#navbar button {
+.navbar button {
   border-color: black;
   background-color: white;
   width: 120px;
   height:40px;
   text-align: center;
 }
-#navbar button:hover {
+.navbar button:hover {
   background-color: rgb(235, 238, 238); /* Change background color on hover */
   color: black;
   transform: scale(1.05); /* Scale up the email on hover */

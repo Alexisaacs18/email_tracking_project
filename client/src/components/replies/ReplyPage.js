@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import ReplyNav from './ReplyNav'
 
 function ReplyPage(){
-    return(<div>Reply Page</div>)
+    return(<div id ='ReplyPage'><ReplyNav/></div>)
 }
 
 export default ReplyPage;

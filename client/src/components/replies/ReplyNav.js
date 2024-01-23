@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate} from "react-router-dom";
 
-function NavBar(){
+function ReplyNav(){
   const navigate = useNavigate();
   
     const navigateToHome = () => {
@@ -18,7 +18,7 @@ function NavBar(){
     };
 
     return(
-      <nav className = 'navbar'> 
+      <nav className ='navbar'> 
       <ul>
         <li><p>Email Tracker</p></li>
         <li><button onClick={navigateToHome}>Home</button></li>
@@ -29,4 +29,4 @@ function NavBar(){
       </ul>
       </nav>
   )}
-export default NavBar;
+export default ReplyNav;
