@@ -19,6 +19,7 @@ if __name__ == '__main__':
 
         emails = [
             Emails(
+                email_title = "Cold email 1",
                 subject = "Email Data Question",
                 body = """
                 Hi [first name],
@@ -41,6 +42,7 @@ if __name__ == '__main__':
                 number_unsubscribed = 0
             ),
             Emails(
+                email_title = "Cold email 2",
                 subject = "Reply Rate Question",
                 body = """
                 Hi [first name],
@@ -52,6 +54,7 @@ if __name__ == '__main__':
                 number_unsubscribed = 3
             ),
             Emails(
+                email_title = "Cold email 3",
                 subject = "Unsubscribe Issues",
                 body = """
                 Hi [first name],
@@ -162,7 +165,7 @@ if __name__ == '__main__':
             Reply(
                 email_template_id = emails[2].id,
                 recipient_id = recipients[5].id,
-                tone = True
+                tone = False
             )
         ]
 
