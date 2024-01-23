@@ -1,4 +1,4 @@
-#app-container {
+.appLight {
   background-color: white;
   display: flexbox;
 }
