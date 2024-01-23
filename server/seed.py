@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
         emails = [
             Emails(
-                email_title = "Cold email 1",
+                email_title = "Cold: Email Data",
                 subject = "Email Data Question",
                 body = """
                 Hi [first name],
@@ -28,7 +28,7 @@ if __name__ == '__main__':
                 52% of tier 2 tech companies report lack of
                 visibility over their cold email data.
 
-                Oracle reported a 36% decrease in unsubscribed emails
+                Oracle reported a 12% decrease in unsubscribed emails
                 since using Email Trace.
 
                 Would you be open to discussing this?
@@ -42,19 +42,30 @@ if __name__ == '__main__':
                 number_unsubscribed = 0
             ),
             Emails(
-                email_title = "Cold email 2",
+                email_title = "Cold email",
                 subject = "Reply Rate Question",
                 body = """
                 Hi [first name],
 
+                Companies in the [revenue] revenue range have
+                reported a 30% decrease in positive replies.
 
+                Email Trace reply rate data to SDR's. Enabling
+                Them to keep their emails personalized and relevant,
+                and reducing admin work for managers
+
+                Would you be open to conversation around reducing headache?
+
+                Cheers,
+
+                Nick Jernigin
                 """,
                 number_sent = 6,
                 number_replied = 1,
                 number_unsubscribed = 3
             ),
             Emails(
-                email_title = "Cold email 3",
+                email_title = "Cold email",
                 subject = "Unsubscribe Issues",
                 body = """
                 Hi [first name],
