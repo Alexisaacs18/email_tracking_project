@@ -10,6 +10,7 @@ function EmailCard({ title ,toggleComponent}) {
     <div onClick={toggleComponent}>
     <li className='email'  >
       <p>{title}</p>
+      <p></p>
     </li>
    
     
