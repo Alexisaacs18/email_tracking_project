@@ -30,15 +30,16 @@ function MainPage() {
   }
 
   const handleNewPostClick = () => {
-    setNewForm(prevState => !newForm);
+    setNewForm(!newForm)
+    console.log("This function ran")
   }
 
   return (
     <div>
       <div><NavBar /></div>
       <div><SideBar emails={emails} toggleComponent={toggleComponent} handleNewPostClick={handleNewPostClick} /></div>
-      <div>{showComponent && <EmailBody email={selectedEmail} />}</div>
-      <div>{newForm && <NewForm />}</div>
+      <div >{showComponent && <EmailBody email={selectedEmail} />}</div>
+      <div>{newForm && <NewForm newForm={newForm} setNewForm={setNewForm}/>}</div>
     </div>
   )
 }
