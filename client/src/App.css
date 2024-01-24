@@ -177,34 +177,24 @@ body {
   background-color: white;
 }
 
-#form {
+#newform {
+  margin-top: 300px;
+  margin-left: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid black;
   background-color: white;
   position: fixed;
-  width: 500px;
-  height: auto;
-  padding: 20px;
+  width: 30lvw;
+  height: 30vh;
+  text-align: center;
   z-index: 1001;
-  transition: transform 0.3s ease-out;
+  transform: translate(-50%, -50%);
+  background-color: white;
+
+
 }
 
-#newform.hidden {
-  transform: translateX(100%);
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
-}
-
-
-#newform.visible {
-  transform: translateX(0);
-  opacity: 1;
-  visibility: visible;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-}
-
-#emailbody {
+/* #emailbody {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid black;
   padding: 0px;
@@ -219,4 +209,51 @@ body {
   justify-content: center;
   text-align: center;
   z-index: 1000;
+} */
+
+/* EmailBodyStyles.css */
+
+#emailbody {
+  max-width: 600px;
+  margin-left: 275px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#subject {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+#body {
+  margin-bottom: 20px;
+}
+
+#sendbutton,
+#replybutton,
+#unsubscribedbutton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#sendButton:hover,
+#replyButton:hover,
+#unsubscribedButton:hover {
+  background-color: #45a049;
 }
