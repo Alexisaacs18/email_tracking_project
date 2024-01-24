@@ -29,7 +29,6 @@ function EmailBody({ email }) {
       <button onClick={handleSent}>Sent: {sent}</button>
       <button onClick={handleReplies}>Replies: {replies}</button>
       <button onClick={handleUnsubscribed}>Unsubscribed: {unsubscribed}</button>
-
     </div>
   )
 }
