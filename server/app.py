@@ -19,23 +19,33 @@ def emails():
 
     elif request.method == "POST":
 
-        form_data = request.get_json()
+        try:
 
-        new_reply = Emails(
-            subject = form_data["subject"],
-            body = form_data["body"],
-            number_sent = form_data["number_sent"],
-            number_replied = form_data["number_replied"],
-            number_unsubscribed = form_data["number_unsubscribed"]
-        )
+            form_data = request.get_json()
 
-        db.session.add()
-        db.session.commit()
+            new_reply = Emails(
+                email_title = form_data["email_title"],
+                subject = form_data["subject"],
+                body = form_data["body"],
+                number_sent = form_data["number_sent"],
+                number_replied = form_data["number_replied"],
+                number_unsubscribed = form_data["number_unsubscribed"]
+            )
 
-        response = make_response(
-            new_reply.to_dict(),
-            201
-        )
+            db.session.add(new_reply)
+            db.session.commit()
+
+            response = make_response(
+                new_reply.to_dict(),
+                201
+            )
+        
+        except ValueError:
+
+            response = make_response(
+                {"error" : "value error"},
+                400
+            )
 
     else:
 
@@ -85,6 +95,34 @@ def companies():
         companies_to_dict,
         200
     )
+
+    return response
+
+@app.route("/emails/<int:id>", methods = ["PATCH"])
+def emails_by_id(id):
+
+    email = Emails.query.filter(Emails.id == id).first()
+
+    if email:
+
+        form_data = request.get_json()
+
+        for key in form_data:
+            setattr(email, key, form_data[key])
+
+        db.session.commit()
+
+        response = make_response(
+            email.to_dict(),
+            201
+        )
+
+    else:
+
+        response = make_response(
+            {"error" : "invalid ID"},
+            404
+        )
 
     return response
 
