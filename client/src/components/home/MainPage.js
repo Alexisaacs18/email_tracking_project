@@ -38,9 +38,7 @@ function MainPage() {
       <div><NavBar /></div>
       <div><SideBar emails={emails} toggleComponent={toggleComponent} handleNewPostClick={handleNewPostClick} /></div>
       <div>{showComponent && <EmailBody email={selectedEmail} />}</div>
-      <div id="newform" className={newForm ? 'visible' : 'hidden'}>
-        <NewForm />
-      </div>
+      <div>{newForm && <NewForm />}</div>
     </div>
   )
 }
