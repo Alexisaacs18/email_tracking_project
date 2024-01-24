@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { showComponent, setShowComponent } from './EmailCard'
 function EmailBody({ email }) {
-
-  console.log(email)
-
+  const url = "http://127.0.0.1:5555"
   const [sent, setSent] = useState(email.number_sent)
   const [replies, setReplies] = useState(email.number_replied)
   const [unsubscribed, setUnsubscribed] = useState(email.number_unsubscribed)
@@ -15,15 +13,54 @@ function EmailBody({ email }) {
   }, [email])
 
   function handleSent() {
+    updateSent(sent)
     setSent(prev => prev + 1)
   }
 
   function handleReplies() {
+    updateReply(replies)
     setReplies(prev => prev + 1)
   }
 
   function handleUnsubscribed() {
+    updateUnsubscribe(unsubscribed)
     setUnsubscribed(prev => prev + 1)
+  }
+
+  function updateSent(sent) {
+    fetch(`${url}/emails/${email.id}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        number_sent: sent + 1
+      })
+    })
+  }
+
+  function updateReply(reply) {
+    fetch(`${url}/emails/${email.id}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        number_replied: reply + 1
+      })
+    })
+  }
+
+  function updateUnsubscribe(unsubscribed) {
+    fetch(`${url}/emails/${email.id}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        number_unsubscribed: unsubscribed + 1
+      })
+    })
   }
 
 
