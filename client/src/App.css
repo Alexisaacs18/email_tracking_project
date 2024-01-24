@@ -251,61 +251,10 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 } */
 
-
-#newform {
-  margin-top:20px;
-  margin-left: 275px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-  position: fixed;
-  width: 30lvw;
-  height: 30vh;
-  text-align: center;
-  z-index: 1001;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 5px;
-  
-
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-#newform input,
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-}
-
-#newform button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-/* NewEmailForm.module.css */
-
 #newform {
   width:fit-content;
-  margin: 20px auto;
+  margin-left:275px;
+  margin-top:30px;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -332,6 +281,7 @@ textarea {
   border: none;
   border-radius: 5px;
   font-size: 14px;
+  outline:none;
 }
 
 #newform button {
