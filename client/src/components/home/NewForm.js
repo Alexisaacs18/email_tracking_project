@@ -34,7 +34,7 @@ function NewForm() {
     });
 
     return (
-        <div>
+        <div id="newform">
             <form onSubmit={formik.handleSubmit}>
                 <div>
                     <label htmlFor="email_title">Email Title</label>
@@ -70,43 +70,6 @@ function NewForm() {
                     />
                     {formik.errors.body && <div>{formik.errors.body}</div>}
                 </div>
-
-                <div>
-                    <label htmlFor="number_sent">Number Sent</label>
-                    <input
-                        id="number_sent"
-                        name="number_sent"
-                        type="number"
-                        onChange={formik.handleChange}
-                        value={formik.values.number_sent}
-                    />
-                    {formik.errors.number_sent && <div>{formik.errors.number_sent}</div>}
-                </div>
-
-                <div>
-                    <label htmlFor="number_replied">Number Replied</label>
-                    <input
-                        id="number_replied"
-                        name="number_replied"
-                        type="number"
-                        onChange={formik.handleChange}
-                        value={formik.values.number_replied}
-                    />
-                    {formik.errors.number_replied && <div>{formik.errors.number_replied}</div>}
-                </div>
-
-                <div>
-                    <label htmlFor="number_unsubscribed">Number Unsubscribed</label>
-                    <input
-                        id="number_unsubscribed"
-                        name="number_unsubscribed"
-                        type="number"
-                        onChange={formik.handleChange}
-                        value={formik.values.number_unsubscribed}
-                    />
-                    {formik.errors.number_unsubscribed && <div>{formik.errors.number_unsubscribed}</div>}
-                </div>
-
                 <button type="submit">Submit</button>
             </form>
         </div>
