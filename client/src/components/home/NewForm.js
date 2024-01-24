@@ -1,8 +1,9 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import Draggable from 'react-draggable';
 
-function NewForm() {
+function NewForm({newForm,setNewForm}) {
     const formSchema = yup.object({
         email_title: yup.string().required("Email title is required."),
         subject: yup.string().required("Email subject is required."),
@@ -29,11 +30,27 @@ function NewForm() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(values),
-            });
+            })
+                .then((res) => {
+                    if (res.ok) {
+                        return res.json(); // This returns the promise for the next .then()
+                    }
+                    throw new Error('Network response was not ok.');
+                })
+                .then((email) => {
+                    console.log("Email submitted successfully", email);
+                })
+                .catch((error) => {
+                    console.error("There was a problem with the fetch operation:", error);
+                });
         }
     });
+    function handleExit(){
+        setNewForm(prev=>!newForm)
+    }
 
     return (
+        <Draggable>
         <div id="newform">
             <form onSubmit={formik.handleSubmit}>
                 <div>
@@ -44,35 +61,41 @@ function NewForm() {
                         type="text"
                         onChange={formik.handleChange}
                         value={formik.values.email_title}
+                        placeholder="Title"
                     />
                     {formik.errors.email_title && <div>{formik.errors.email_title}</div>}
                 </div>
 
                 <div>
-                    <label htmlFor="subject">Subject</label>
+                    <label  htmlFor="subject">Subject</label>
                     <input
                         id="subject"
                         name="subject"
                         type="text"
                         onChange={formik.handleChange}
                         value={formik.values.subject}
+                        placeholder="Subject"
                     />
                     {formik.errors.subject && <div>{formik.errors.subject}</div>}
                 </div>
 
                 <div>
-                    <label htmlFor="body">Body</label>
+                    <label htmlFor="body"></label>
                     <textarea
                         id="body"
                         name="body"
                         onChange={formik.handleChange}
                         value={formik.values.body}
+                        placeholder="Compose your email"
                     />
                     {formik.errors.body && <div>{formik.errors.body}</div>}
                 </div>
                 <button type="submit">Submit</button>
+                <button type="button" id='newformx'onClick={handleExit}>X</button>
             </form>
+          
         </div>
+        </Draggable>
     );
 }
 

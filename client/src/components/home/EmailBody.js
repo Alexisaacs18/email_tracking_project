@@ -13,18 +13,18 @@ function EmailBody({ email }) {
   }, [email])
 
   function handleSent() {
-    updateSent(sent)
     setSent(prev => prev + 1)
+    updateSent(sent)
   }
 
   function handleReplies() {
-    updateReply(replies)
     setReplies(prev => prev + 1)
+    updateReply(replies)
   }
 
   function handleUnsubscribed() {
-    updateUnsubscribe(unsubscribed)
     setUnsubscribed(prev => prev + 1)
+    updateUnsubscribe(unsubscribed)
   }
 
   function updateSent(sent) {
@@ -69,9 +69,9 @@ function EmailBody({ email }) {
       <div id='title'><p>Title: {email.email_title}</p></div>
       <div id='subject'><p>Subject: {email.subject}</p></div>
       <div id='body'><p>{email.body}</p></div>
-      <button onClick={handleSent}>Sent: {sent}</button>
-      <button onClick={handleReplies}>Replies: {replies}</button>
-      <button onClick={handleUnsubscribed}>Unsubscribed: {unsubscribed}</button>
+      <button id='sendbutton' onClick={handleSent}>Sent: {sent}</button>
+      <button id='replybutton' onClick={handleReplies}>Replies: {replies}</button>
+      <button id='unsubscribedbutton' onClick={handleUnsubscribed}>Unsubscribed: {unsubscribed}</button>
     </div>
   )
 }

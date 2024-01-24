@@ -17,7 +17,7 @@ function NavBar() {
   return (
     <nav className='navbar'>
       <ul>
-        <li><p>Email Tracker</p></li>
+        <li><h1>Email Tracker</h1></li>
         <li><button onClick={navigateToHome}>Home</button></li>
         <li><button onClick={navigateToStatistics}>Statistics</button></li>
         <li><button onClick={navigateToCompanies}>Companies</button></li>

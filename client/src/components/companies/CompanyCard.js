@@ -3,10 +3,11 @@ import React from "react";
 function CompanyCard({ name, employees, revenue }) {
 
     return (
-        <div>
-            <h3>Name: {name}</h3>
-            <ul>Employees: {employees}</ul>
-            <ul>Revenue: {revenue}</ul>
+        <div className="company-card">
+            <div className="company-card-header">{name}
+                <ul>Employees: {employees}</ul>
+                <ul>Revenue: {revenue}</ul>
+            </div>
         </div>
     )
 }
