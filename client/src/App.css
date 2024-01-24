@@ -177,17 +177,31 @@ body {
   background-color: white;
 }
 
-#newform {
-  margin-left: 300px;
+#form {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid black;
+  background-color: white;
   position: fixed;
-  width: 70lvw;
-  height: 70vh;
-  text-align: center;
+  width: 500px;
+  height: auto;
+  padding: 20px;
   z-index: 1001;
-  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease-out;
+}
 
+#newform.hidden {
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
+}
+
+
+#newform.visible {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 #emailbody {

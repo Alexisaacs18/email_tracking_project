@@ -30,7 +30,7 @@ function MainPage() {
   }
 
   const handleNewPostClick = () => {
-    setNewForm(!newForm)
+    setNewForm(prevState => !newForm);
   }
 
   return (
@@ -38,7 +38,9 @@ function MainPage() {
       <div><NavBar /></div>
       <div><SideBar emails={emails} toggleComponent={toggleComponent} handleNewPostClick={handleNewPostClick} /></div>
       <div>{showComponent && <EmailBody email={selectedEmail} />}</div>
-      <div>{newForm && <NewForm />}</div>
+      <div id="newform" className={newForm ? 'visible' : 'hidden'}>
+        <NewForm />
+      </div>
     </div>
   )
 }

@@ -29,13 +29,25 @@ function NewForm() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(values),
-            });
+            })
+                .then((res) => {
+                    if (res.ok) {
+                        return res.json(); // This returns the promise for the next .then()
+                    }
+                    throw new Error('Network response was not ok.');
+                })
+                .then((email) => {
+                    console.log("Email submitted successfully", email);
+                })
+                .catch((error) => {
+                    console.error("There was a problem with the fetch operation:", error);
+                });
         }
     });
 
     return (
-        <div id="newform">
-            <form onSubmit={formik.handleSubmit}>
+        <div>
+            <form onSubmit={formik.handleSubmit} id="form">
                 <div>
                     <label htmlFor="email_title">Email Title</label>
                     <input
