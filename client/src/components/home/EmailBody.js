@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { showComponent, setShowComponent } from './EmailCard'
 function EmailBody({ email }) {
 
+  console.log(email)
+
   const [sent, setSent] = useState(email.number_sent)
   const [replies, setReplies] = useState(email.number_replied)
   const [unsubscribed, setUnsubscribed] = useState(email.number_unsubscribed)
