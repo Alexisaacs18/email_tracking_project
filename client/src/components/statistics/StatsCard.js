@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Line } from "react-chartjs-2";
 function StatsCard({ title, sent, replied, unsubscribed }) {
     return (
         <div className="statscard">
