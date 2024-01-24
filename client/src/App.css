@@ -165,3 +165,10 @@ border-color: black;
   background-color: white;
   color: black;
 }
+
+#composedbutton{
+  width:250px;
+  height:25px;
+  border-color: black;
+  background-color: white;
+}
