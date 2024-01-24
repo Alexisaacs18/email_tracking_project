@@ -186,7 +186,9 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
 }
+
 
 #title {
   font-size: 18px;
@@ -292,6 +294,16 @@ textarea {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+}
+#newform #newformx {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 5px;
 }
 
 button:hover {
