@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import EmailBody from './EmailBody'
+import React from 'react'
+
 function EmailCard({ email, toggleComponent }) {
 
   const handleClick = () => {
