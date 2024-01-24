@@ -56,7 +56,7 @@ def emails():
 
     return response
 
-@app.route("/replies", methods = ["GET", "POST"])
+@app.route("/replies", methods = ["GET"])
 def replies():
 
     replies = Reply.query.all()
@@ -87,14 +87,41 @@ def recipients():
 @app.route("/companies", methods = ["GET", "POST"])
 def companies():
 
-    companies = Company.query.all()
+    if request.method == "GET":
 
-    companies_to_dict = [company.to_dict(rules = ("-recipient", )) for company in companies]
+        companies = Company.query.all()
 
-    response = make_response(
-        companies_to_dict,
-        200
-    )
+        companies_to_dict = [company.to_dict(rules = ("-recipient", )) for company in companies]
+
+        response = make_response(
+            companies_to_dict,
+            200
+        )
+
+    elif request.method == "POST":
+
+        form_data = request.get_json()
+
+        new_company = Company(
+            name = form_data["name"],
+            employees = form_data["employees"],
+            revenue = form_data["revenue"]
+        )
+
+        db.session.add(new_company)
+        db.session.commit()
+
+        response = make_response(
+            new_company.to_dict(),
+            201
+        )
+
+    else:
+
+        response = make_response(
+            {"error" : "invalid method"},
+            400
+        )
 
     return response
 
