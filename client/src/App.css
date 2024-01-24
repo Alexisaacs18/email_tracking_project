@@ -121,6 +121,10 @@ body {
   padding: 0;
   margin-top: 0;
 }
+#sidebar button {
+    width: 255px;
+   
+}
 
 .email {
   background-color: white;
