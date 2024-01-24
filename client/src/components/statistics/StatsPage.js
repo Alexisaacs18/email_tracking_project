@@ -4,7 +4,7 @@ import StatsCard from './StatsCard'
 function StatsPage() {
     const url = "http://127.0.0.1:5555"
     const [emails, setEmails] = useState([])
-    // const [replies, setReplies] = useState([])
+    const [replies, setReplies] = useState([])
 
     useEffect(() => {
         fetch(url + "/emails")
@@ -16,14 +16,14 @@ function StatsPage() {
             .catch((error) => console.error("Error fetching data:", error));
     }, []);
 
-    // useEffect(() => {
-    //     fetch(`${url}/replies`)
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             setReplies(data)
-    //             console.log(data)
-    //         })
-    // }, [])
+    useEffect(() => {
+        fetch(`${url}/replies`)
+            .then((res) => res.json())
+            .then((data) => {
+                setReplies(data)
+                console.log(data)
+            })
+    }, [])
 
     const [search, setSearch] = useState('')
 

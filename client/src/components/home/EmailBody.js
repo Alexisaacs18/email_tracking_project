@@ -8,6 +8,12 @@ function EmailBody({ email }) {
   const [replies, setReplies] = useState(email.number_replied)
   const [unsubscribed, setUnsubscribed] = useState(email.number_unsubscribed)
 
+  useEffect(() => {
+    setSent(email.number_sent)
+    setReplies(email.number_replied)
+    setUnsubscribed(email.number_unsubscribed)
+  }, [email])
+
   function handleSent() {
     setSent(prev => prev + 1)
   }
