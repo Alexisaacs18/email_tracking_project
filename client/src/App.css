@@ -178,19 +178,22 @@ body {
 }
 
 #newform {
-  margin-left: 300px;
+  margin-top:300px;
+  margin-left: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid black;
   position: fixed;
-  width: 70lvw;
-  height: 70vh;
+  width: 30lvw;
+  height: 30vh;
   text-align: center;
   z-index: 1001;
   transform: translate(-50%, -50%);
+  background-color: white;
+  
 
 }
 
-#emailbody {
+/* #emailbody {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid black;
   padding: 0px;
@@ -205,4 +208,50 @@ body {
   justify-content: center;
   text-align: center;
   z-index: 1000;
+} */
+
+/* EmailBodyStyles.css */
+
+#emailbody {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#subject {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+#body {
+  margin-bottom: 20px;
+}
+
+#sendButton,
+#replyButton,
+#unsubscribedButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#sendButton:hover,
+#replyButton:hover,
+#unsubscribedButton:hover {
+  background-color: #45a049;
 }
