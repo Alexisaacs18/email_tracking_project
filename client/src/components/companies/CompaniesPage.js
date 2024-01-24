@@ -18,16 +18,18 @@ function CompaniesPage() {
 
 
     return (
-        <div>
+        <div className="companies-container">
             <CompaniesNav />
-            {companies.map((company) => (
-                <CompanyCard
-                    key={company.id}
-                    name={company.name}
-                    employees={company.employees}
-                    revenue={company.revenue}
-                />
-            ))}
+            <div className="companies-list">
+                {companies.map((company) => (
+                    <CompanyCard
+                        key={company.id}
+                        name={company.name}
+                        employees={company.employees}
+                        revenue={company.revenue}
+                    />
+                ))}
+            </div>
         </div>
     )
 }
