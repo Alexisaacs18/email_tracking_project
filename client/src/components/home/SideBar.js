@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import EmailCard from './EmailCard'
-function SideBar({ emails,toggleComponent }) {
+function SideBar({ emails,toggleComponent, onNewPost }) {
   const [search, setSearch] = useState('')
 
   const filtered = emails.filter(email => email.email_title.toUpperCase().includes(search.toUpperCase()))
@@ -9,10 +9,15 @@ function SideBar({ emails,toggleComponent }) {
     setSearch(e.target.value)
   }
 
+
+  const handleNewPostClick = () => {
+    onNewPost()
+  }
   return (
     <nav id='sidebar'>
       <ul>
         <input placeholder='search' id='searchbar' value={search} onChange={updateSearch}></input>
+        <button onClick={handleNewPostClick}>NewPost</button>
         {filtered.map((email) => (
           <EmailCard
             key={email.id}
