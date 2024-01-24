@@ -1,14 +1,11 @@
 import React from 'react'
 import { showComponent, setShowComponent } from './EmailCard'
-function EmailBody({ email }) {
-  if (!email) return null;
-
-
+function EmailBody({ title }) {
   return (
     <div id='emailbody'>
-      <div id='title'><p>Title: {email.email_title}</p></div>
-      <div id='subject'><p>Subject: {email.subject}</p></div>
-      <div id='body'><p>{email.body}</p></div>
+      <div id='title'><p>{title}</p></div>
+      <div id='subject'></div>
+      <div id='body'></div>
     </div>
   )
 }
