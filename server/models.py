@@ -24,24 +24,24 @@ class Emails(db.Model, SerializerMixin):
     #validations
     @validates('number_sent')
     def validates_number_sent(self, key, value):
-        if value > -1:
-            return value
-        else:
+        if value < 0:
             raise ValueError
+        else:
+            return value
         
     @validates('number_replies')
     def validates_number_replies(self, key, value):
-        if value > -1:
-            return value
-        else:
+        if value < 0:
             raise ValueError
+        else:
+            return value
         
     @validates('unsubscribed')
     def validates_unsubscribed(self, key, value):
-        if value > -1:
-            return value
-        else:
+        if value < 0:
             raise ValueError
+        else:
+            return value
 
 
 class Reply(db.Model, SerializerMixin):
