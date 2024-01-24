@@ -2,54 +2,64 @@
   background-color: white;
   display: flexbox;
 }
-.appDark{
+
+.appDark {
   background-color: black;
   color: white;
-  
+
 }
-.appDark .navbar{
-background-color: black;
-color:white;
-border-bottom: 1px solid grey;
-}
-.appDark .navbar button{
+
+.appDark .navbar {
   background-color: black;
-  color:white;
+  color: white;
+  border-bottom: 1px solid grey;
+}
+
+.appDark .navbar button {
+  background-color: black;
+  color: white;
   border-color: grey;
 }
-.appDark #sidebar{
+
+.appDark #sidebar {
   background-color: black;
   border-color: grey;
 }
-.appDark #sidebar .email{
+
+.appDark #sidebar .email {
   background-color: black;
   border-color: grey;
   box-shadow: 0 1px 1px grey;
 }
-.appDark #emailbody{
-  background-color: black;
-  color: white;
-  border-color: grey;
-}
-.appDark #searchbar{
+
+.appDark #emailbody {
   background-color: black;
   color: white;
   border-color: grey;
 }
 
-body{
+.appDark #searchbar {
+  background-color: black;
+  color: white;
+  border-color: grey;
+}
+
+body {
   overflow-x: hidden;
 }
 
 .navbar {
-  background-color: white; /* Set background color */
-  overflow-x: hidden; /* Clear floats */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
-  padding:15px;
+  background-color: white;
+  /* Set background color */
+  overflow-x: hidden;
+  /* Clear floats */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add a box shadow */
+  padding: 15px;
   border-bottom: 1px solid black;
   position: relative;
-  width:100vw;
-  
+  width: 100vw;
+
 }
 
 .navbar ul {
@@ -58,117 +68,141 @@ body{
   padding-top: 10px;
   padding-left: 0;
   overflow: hidden;
-  text-align: center; /* Center the text within the ul */
-  display: flex; /* Use flexbox to align items horizontally */
-  justify-content: left; /* Center the items horizontally */
-} 
+  text-align: center;
+  /* Center the text within the ul */
+  display: flex;
+  /* Use flexbox to align items horizontally */
+  justify-content: left;
+  /* Center the items horizontally */
+}
 
 
 .navbar li {
-  float: none; /* Remove the float to center the list items */
-   /* Display list items inline */
-  margin-right: 40px; /* Add some space between items if needed */
- 
+  float: none;
+  /* Remove the float to center the list items */
+  /* Display list items inline */
+  margin-right: 40px;
+  /* Add some space between items if needed */
+
 }
 
 .navbar button {
   border-color: black;
   background-color: white;
   width: 120px;
-  height:40px;
+  height: 40px;
   text-align: center;
 }
 
 .navbar button:hover {
-  background-color: rgb(235, 238, 238); /* Change background color on hover */
+  background-color: rgb(235, 238, 238);
+  /* Change background color on hover */
   color: black;
-  transform: scale(1.05); /* Scale up the email on hover */
+  transform: scale(1.05);
+  /* Scale up the email on hover */
 
 }
 
-#sidebar{
+#sidebar {
   overflow-y: auto;
   overflow-x: hidden;
-  height:89vh;
-  width:250px;
+  height: 89vh;
+  width: 250px;
   position: absolute;
   margin-top: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add a box shadow */
   border: 1px solid black;
 }
 
 #sidebar ul {
-  list-style-type:none;
+  list-style-type: none;
   margin-left: 0;
-  padding:0;
+  padding: 0;
   margin-top: 0;
 }
 
-.email{
-background-color: white;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
-margin-left: 0;
-margin-bottom: 1px;
-padding:20px;
-border-color: black;
-
-}
-
-.email:hover{
-  background-color: lightgrey; /* Change background color on hover */
-  color: whitesmoke;
-  transform: scale(1.1); /* Scale up the email on hover */
-}
-
-#emailbody{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid black;
-  padding: 0px;
-  left:300px;
-  bottom:100px;
-  margin-top: 200px;
-  margin-left:0px;
-  position: relative;
-  width:70lvw;
-  height:70vh;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  
-}
-
-#searchbar{
-  width:243px;
-  height:25px;
-}
-
-#statslist{
-  list-style:none;
-  overflow-y:visible;
-}
-
-
-.statscard{
+.email {
   background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add a box shadow */
+  margin-left: 0;
+  margin-bottom: 1px;
+  padding: 20px;
+  border-color: black;
+
+}
+
+.email:hover {
+  background-color: lightgrey;
+  /* Change background color on hover */
+  color: whitesmoke;
+  transform: scale(1.1);
+  /* Scale up the email on hover */
+}
+
+#searchbar {
+  width: 243px;
+  height: 25px;
+}
+
+#statslist {
+  list-style: none;
+  overflow-y: visible;
+}
+
+
+.statscard {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add a box shadow */
   margin-left: 0;
   margin-bottom: 3px;
-  padding:20px;
+  padding: 20px;
   border-color: black;
 }
 
-#statssearchbar{
-  width:20vw;
-  height:3vh;
+#statssearchbar {
+  width: 20vw;
+  height: 3vh;
   border-color: black;
   background-color: white;
   color: black;
 }
 
-#composedbutton{
-  width:250px;
-  height:25px;
+#composedbutton {
+  width: 250px;
+  height: 25px;
   border-color: black;
   background-color: white;
+}
+
+#newform {
+  margin-left: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+  position: fixed;
+  width: 70lvw;
+  height: 70vh;
+  text-align: center;
+  z-index: 1001;
+  transform: translate(-50%, -50%);
+
+}
+
+#emailbody {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+  padding: 0px;
+  left: 300px;
+  bottom: 100px;
+  margin-top: 200px;
+  margin-left: 0px;
+  position: relative;
+  width: 70lvw;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1000;
 }
