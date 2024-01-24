@@ -32,7 +32,7 @@ function EmailBody({ email }) {
       <div id='title'><p>Title: {email.email_title}</p></div>
       <div id='subject'><p>Subject: {email.subject}</p></div>
       <div id='body'><p>{email.body}</p></div>
-      <button id='sendButton' onClick={handleSent}>Sent: {sent}</button>
+      <button id='sendbutton' onClick={handleSent}>Sent: {sent}</button>
       <button id='replybutton' onClick={handleReplies}>Replies: {replies}</button>
       <button id='unsubscribedbutton' onClick={handleUnsubscribed}>Unsubscribed: {unsubscribed}</button>
     </div>

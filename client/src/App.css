@@ -214,7 +214,8 @@ body {
 
 #emailbody {
   max-width: 600px;
-  margin: 20px auto;
+  margin-left: 275px;
+  margin-top:20px;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -238,9 +239,9 @@ body {
   margin-bottom: 20px;
 }
 
-#sendButton,
-#replyButton,
-#unsubscribedButton {
+#sendbutton,
+#replybutton,
+#unsubscribedbutton {
   background-color: #4CAF50;
   color: white;
   padding: 10px;
