@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import Draggable from 'react-draggable';
 
 function NewForm() {
     const formSchema = yup.object({
@@ -46,8 +47,9 @@ function NewForm() {
     });
 
     return (
-        <div>
-            <form onSubmit={formik.handleSubmit} id="form">
+        <Draggable>
+        <div id="newform">
+            <form onSubmit={formik.handleSubmit}>
                 <div>
                     <label htmlFor="email_title">Email Title</label>
                     <input
@@ -56,35 +58,39 @@ function NewForm() {
                         type="text"
                         onChange={formik.handleChange}
                         value={formik.values.email_title}
+                        placeholder="Title"
                     />
                     {formik.errors.email_title && <div>{formik.errors.email_title}</div>}
                 </div>
 
                 <div>
-                    <label htmlFor="subject">Subject</label>
+                    <label  htmlFor="subject">Subject</label>
                     <input
                         id="subject"
                         name="subject"
                         type="text"
                         onChange={formik.handleChange}
                         value={formik.values.subject}
+                        placeholder="Subject"
                     />
                     {formik.errors.subject && <div>{formik.errors.subject}</div>}
                 </div>
 
                 <div>
-                    <label htmlFor="body">Body</label>
+                    <label htmlFor="body"></label>
                     <textarea
                         id="body"
                         name="body"
                         onChange={formik.handleChange}
                         value={formik.values.body}
+                        placeholder="Compose your email"
                     />
                     {formik.errors.body && <div>{formik.errors.body}</div>}
                 </div>
                 <button type="submit">Submit</button>
             </form>
         </div>
+        </Draggable>
     );
 }
 

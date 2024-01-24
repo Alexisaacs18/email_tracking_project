@@ -177,42 +177,6 @@ body {
   background-color: white;
 }
 
-#newform {
-  margin-top: 300px;
-  margin-left: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid black;
-  background-color: white;
-  position: fixed;
-  width: 30lvw;
-  height: 30vh;
-  text-align: center;
-  z-index: 1001;
-  transform: translate(-50%, -50%);
-  background-color: white;
-
-
-}
-
-/* #emailbody {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid black;
-  padding: 0px;
-  left: 300px;
-  bottom: 100px;
-  margin-top: 200px;
-  margin-left: 0px;
-  position: relative;
-  width: 70lvw;
-  height: 70vh;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 1000;
-} */
-
-/* EmailBodyStyles.css */
-
 #emailbody {
   max-width: 600px;
   margin-left: 275px;
@@ -255,5 +219,81 @@ body {
 #sendButton:hover,
 #replyButton:hover,
 #unsubscribedButton:hover {
+  background-color: #45a049;
+}
+/* #emailbody {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+  padding: 0px;
+  left: 300px;
+  bottom: 100px;
+  margin-top: 200px;
+  margin-left: 0px;
+  position: relative;
+  width: 70lvw;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1000;
+} */
+
+/* EmailBodyStyles.css */
+/* NewEmailForm.module.css */
+
+/* #newform {
+  max-width: 400px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+#newform {
+  width:fit-content;
+  margin-left:275px;
+  margin-top:30px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+#newform label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+#newform input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  outline:none;
+}
+
+#newform button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
   background-color: #45a049;
 }

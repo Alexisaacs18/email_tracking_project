@@ -13,18 +13,18 @@ function EmailBody({ email }) {
   }, [email])
 
   function handleSent() {
-    updateSent(sent)
     setSent(prev => prev + 1)
+    updateSent(sent)
   }
 
   function handleReplies() {
-    updateReply(replies)
     setReplies(prev => prev + 1)
+    updateReply(replies)
   }
 
   function handleUnsubscribed() {
-    updateUnsubscribe(unsubscribed)
     setUnsubscribed(prev => prev + 1)
+    updateUnsubscribe(unsubscribed)
   }
 
   function updateSent(sent) {
