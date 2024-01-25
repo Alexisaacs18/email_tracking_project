@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RepliesNav from "./RapliesNav";
 import RepliesCard from "./RepliesCard";
+import RepliesList from "./RepliesList";
 
 function RepliesPage() {
 
@@ -20,16 +21,9 @@ function RepliesPage() {
     return (
         <div>
             <RepliesNav />
-            <div className="reply-list">
-                {replies.map((reply) => (
-                    <RepliesCard
-                        key={reply.id}
-                        reply={reply}
-                    />
-                ))}
-            </div>
+            <RepliesList replies={replies} />
         </div>
     )
 }
 
-export default RepliesPage
+export default RepliesPage;
