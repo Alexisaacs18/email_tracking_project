@@ -20,7 +20,7 @@ function MainPage() {
         console.log("Emails:", emails)
       })
       .catch((error) => console.error("Error fetching data:", error));
-  }, [emails]);
+  }, []);
 
 
   const toggleComponent = (email) => {
@@ -38,13 +38,16 @@ function MainPage() {
     const email = emails.filter((email) => (email.id !== id))
     setEmails(email)
   }
+  function addEmail(email) {
+    setEmails((prevEmails) => [...prevEmails, email]);
+  }
 
   return (
     <div>
       <div><NavBar /></div>
       <div><SideBar emails={emails} toggleComponent={toggleComponent} handleNewPostClick={handleNewPostClick} deleteTemplate={deleteTemplate} /></div>
       <div >{showComponent && <EmailBody email={selectedEmail} />}</div>
-      <div>{newForm && <NewForm newForm={newForm} setNewForm={setNewForm} />}</div>
+      <div>{newForm && <NewForm newForm={newForm} setNewForm={setNewForm} addEmail={addEmail} />}</div>
     </div>
   )
 }

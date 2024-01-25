@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Draggable from 'react-draggable';
 
-function NewCompanyForm({ companyForm, setCompanyForm }) {
+function NewCompanyForm({ companyForm, setCompanyForm,addCompany,handleExit}) {
     const formSchema = yup.object({
         name: yup.string().required("Email name is required."),
         employees: yup.string().required("Email employees is required."),
@@ -33,7 +33,7 @@ function NewCompanyForm({ companyForm, setCompanyForm }) {
                     throw new Error('Network response was not ok.');
                 })
                 .then((company) => {
-                    console.log("Email company submitted successfully", company);
+                    addCompany(company)
                 })
                 .catch((error) => {
                     console.error("There was a problem with the fetch operation:", error);

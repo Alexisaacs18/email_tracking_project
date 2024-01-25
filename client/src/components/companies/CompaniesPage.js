@@ -22,6 +22,10 @@ function CompaniesPage() {
     function handleClick() {
         setCompanyForm(prev => !companyForm)
     }
+    function addCompany(company) {
+        setCompanies((prevCompanies) => [...prevCompanies, company]);
+      }
+  
 
     return (
         <div>
@@ -29,12 +33,13 @@ function CompaniesPage() {
             <div id ='companyButton-container'>
             <button id="newcompanybutton" onClick={handleClick}> Add New Company </button>
             </div>
+            <div id='companyForm-container'>
+            {companyForm && <CompaniesForm companyForm={companyForm} setCompanyForm={setCompanyForm} addCompany={addCompany} />}
+            </div>
             <div id="companyList-container">
             <CompanyList companies={companies} />
             </div>
-            <div id='companyForm-container'>
-            {companyForm && <CompaniesForm />}
-            </div>
+            
         </div>
     )
 }
