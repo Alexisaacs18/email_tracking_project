@@ -125,12 +125,19 @@ def companies():
 
     return response
 
-@app.route("/emails/<int:id>", methods = ["PATCH", "DELETE"])
+@app.route("/emails/<int:id>", methods = ["GET", "PATCH", "DELETE"])
 def emails_by_id(id):
 
     email = Emails.query.filter(Emails.id == id).first()
 
     if email:
+
+        if request.method == "GET":
+
+            response = make_response(
+                email.to_dict(),
+                200
+            )
 
         if request.method == "PATCH":
 
@@ -162,6 +169,30 @@ def emails_by_id(id):
             {"error" : "invalid ID"},
             404
         )
+
+    return response
+
+@app.route("/recipients/<int:id>", methods = ["GET"])
+def recipient_by_id(id):
+
+    recipient = Recipient.query.filter(Recipient.id == id).first()
+
+    response = make_response(
+        recipient.to_dict(),
+        200
+    )
+
+    return response
+
+@app.route("/companies/<int:id>", methods = ["GET"])
+def companies_by_id(id):
+
+    company = Company.query.filter(Company.id == id).first()
+
+    response = make_response(
+        company.to_dict(),
+        200
+    )
 
     return response
 
