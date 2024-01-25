@@ -22,7 +22,7 @@ function EmailCard({ email, toggleComponent, deleteTemplate }) {
       <div onClick={handleClick}>
         <li className='email'>
           <p>{email.email_title}</p>
-          <button onClick={handleDelete}>X</button>
+          <button id="emaildelete" onClick={handleDelete}>X</button>
         </li>
         
       </div>

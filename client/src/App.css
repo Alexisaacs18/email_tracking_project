@@ -135,6 +135,13 @@ body {
   height: 25px;
   margin-top: 5px;
   margin-bottom: 5px;
+  background-color: #4CAF50;
+  color: white;
+  
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+ 
 }
 
 #emailbody {
@@ -241,7 +248,18 @@ textarea {
 button:hover {
   background-color: #45a049;
 }
-
+#emaildelete{
+  width: fit-content;
+  height: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #4CAF50;
+  color: white;
+  
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 
 .companies-list {
