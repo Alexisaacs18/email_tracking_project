@@ -156,7 +156,7 @@ if __name__ == '__main__':
             Recipient(
                 company_id = companies[2].id,
                 email_address = "jpartridge@adobe.com",
-                contact = "Julia Partridge"
+                contact = "Brittany Partridge"
             ),
             Recipient(
                 company_id = companies[2].id,
