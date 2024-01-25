@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import EmailCard from './EmailCard'
-function SideBar({ emails,toggleComponent, handleNewPostClick }) {
+function SideBar({ emails, toggleComponent, handleNewPostClick, deleteTemplate }) {
   const [search, setSearch] = useState('')
 
   const filtered = emails.filter(email => email.email_title.toUpperCase().includes(search.toUpperCase()))
@@ -19,6 +19,7 @@ function SideBar({ emails,toggleComponent, handleNewPostClick }) {
             key={email.id}
             email={email}
             toggleComponent={toggleComponent}
+            deleteTemplate={deleteTemplate}
           />
         ))}
       </ul>

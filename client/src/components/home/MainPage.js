@@ -34,12 +34,17 @@ function MainPage() {
     console.log("This function ran")
   }
 
+  function deleteTemplate(id) {
+    const email = emails.filter((email) => (email.id !== id))
+    setEmails(email)
+  }
+
   return (
     <div>
       <div><NavBar /></div>
-      <div><SideBar emails={emails} toggleComponent={toggleComponent} handleNewPostClick={handleNewPostClick} /></div>
+      <div><SideBar emails={emails} toggleComponent={toggleComponent} handleNewPostClick={handleNewPostClick} deleteTemplate={deleteTemplate} /></div>
       <div >{showComponent && <EmailBody email={selectedEmail} />}</div>
-      <div>{newForm && <NewForm newForm={newForm} setNewForm={setNewForm}/>}</div>
+      <div>{newForm && <NewForm newForm={newForm} setNewForm={setNewForm} />}</div>
     </div>
   )
 }
