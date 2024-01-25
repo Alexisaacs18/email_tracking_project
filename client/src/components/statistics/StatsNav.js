@@ -25,7 +25,7 @@ function StatsNav() {
   return (
     <nav className='navbar'>
       <ul>
-        <li><p>Email Tracker</p></li>
+        <li><p>Email Trace</p></li>
         <li><button onClick={navigateToHome}>Home</button></li>
         <li><button onClick={navigateToStatistics}>Statistics</button></li>
         <li><button onClick={navigateToCompanies}>Companies</button></li>
