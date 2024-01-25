@@ -3,26 +3,23 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Draggable from 'react-draggable';
 
-function NewForm({ newForm, setNewForm }) {
+function NewCompanyForm({ companyForm, setCompanyForm }) {
     const formSchema = yup.object({
-        email_title: yup.string().required("Email title is required."),
-        subject: yup.string().required("Email subject is required."),
-        body: yup.string().required("Email body is required."),
+        name: yup.string().required("Email name is required."),
+        employees: yup.string().required("Email employees is required."),
+        revenue: yup.string().required("Email revenue is required."),
 
     });
 
     const formik = useFormik({
         initialValues: {
-            email_title: '',
-            subject: '',
-            body: '',
-            number_sent: 0,
-            number_replied: 0,
-            number_unsubscribed: 0,
+            name: '',
+            employees: '',
+            revenue: '',
         },
         validationSchema: formSchema,
         onSubmit: (values) => {
-            fetch('http://127.0.0.1:5555/emails', {
+            fetch('http://127.0.0.1:5555/companies', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -35,8 +32,8 @@ function NewForm({ newForm, setNewForm }) {
                     }
                     throw new Error('Network response was not ok.');
                 })
-                .then((email) => {
-                    console.log("Email submitted successfully", email);
+                .then((company) => {
+                    console.log("Email company submitted successfully", company);
                 })
                 .catch((error) => {
                     console.error("There was a problem with the fetch operation:", error);
@@ -44,7 +41,7 @@ function NewForm({ newForm, setNewForm }) {
         }
     });
     function handleExit() {
-        setNewForm(prev => !newForm)
+        setCompanyForm(prev => !companyForm)
     }
 
     return (
@@ -52,49 +49,49 @@ function NewForm({ newForm, setNewForm }) {
             <div className="newform">
                 <form onSubmit={formik.handleSubmit}>
                     <div>
-                        <label htmlFor="email_title">Email Title</label>
+                        <label htmlFor="name">Name</label>
                         <input
-                            id="email_title"
-                            name="email_title"
+                            id="name"
+                            name="name"
                             type="text"
                             onChange={formik.handleChange}
-                            value={formik.values.email_title}
-                            placeholder="Title"
+                            value={formik.values.name}
+                            placeholder="Company Name"
                         />
-                        {formik.errors.email_title && <div>{formik.errors.email_title}</div>}
+                        {formik.errors.name && <div>{formik.errors.name}</div>}
                     </div>
 
                     <div>
-                        <label htmlFor="subject">Subject</label>
+                        <label htmlFor="employees">Employees</label>
                         <input
-                            id="subject"
-                            name="subject"
-                            type="text"
+                            id="employees"
+                            name="employees"
+                            type="number"
                             onChange={formik.handleChange}
-                            value={formik.values.subject}
-                            placeholder="Subject"
+                            value={formik.values.employees}
+                            placeholder="Number of Employees"
                         />
-                        {formik.errors.subject && <div>{formik.errors.subject}</div>}
+                        {formik.errors.employees && <div>{formik.errors.employees}</div>}
                     </div>
 
                     <div>
-                        <label htmlFor="body"></label>
-                        <textarea
-                            id="body"
-                            name="body"
+                        <label htmlFor="revenue">Revenue</label>
+                        <input
+                            id="revenue"
+                            name="revenue"
+                            type="number"
                             onChange={formik.handleChange}
-                            value={formik.values.body}
-                            placeholder="Compose your email"
+                            value={formik.values.revenue}
+                            placeholder="Annual Revenue"
                         />
-                        {formik.errors.body && <div>{formik.errors.body}</div>}
+                        {formik.errors.revenue && <div>{formik.errors.revenue}</div>}
                     </div>
                     <button type="submit">Submit</button>
                     <button type="button" id='newformx' onClick={handleExit}>X</button>
                 </form>
-
             </div>
         </Draggable>
     );
 }
 
-export default NewForm;
+export default NewCompanyForm;

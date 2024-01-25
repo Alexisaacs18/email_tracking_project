@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import CompaniesNav from './CompaniesNav'
 import CompanyCard from "./CompanyCard"
+import CompaniesForm from "./CompaniesForm"
 function CompaniesPage() {
 
     const url = "http://127.0.0.1:5555"
 
     const [companies, setCompanies] = useState([])
+    const [companyForm, setCompanyForm] = useState(false)
 
     useEffect(() => {
         fetch(`${url}/companies`)
