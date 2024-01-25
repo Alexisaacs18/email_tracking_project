@@ -35,19 +35,19 @@ const generateChartData = (replyRate,unsubscribeRate) => ({
       <li>{`Reply Rate: ${(replied / sent).toFixed(2)}%`}</li>
       <li>{`Unsubscribe Rate: ${(unsubscribed / sent).toFixed(2)}%`}</li>
       <BarChart
-        chartData={chartData}
-        options={{
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-         
-        
-          height: 300, // Set the desired height
-          width: 500, // Set the desired width
-        }}
-      />
+  chartData={chartData}
+  options={{
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+    maintainAspectRatio: false,
+    responsive: true,
+  }}
+  style={{ height: '30vh', width: '30vw' }} // Adjust the values accordingly
+/>
+
     </div>
   );
 }
