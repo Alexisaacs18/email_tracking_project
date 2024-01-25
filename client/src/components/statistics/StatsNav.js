@@ -14,6 +14,10 @@ function StatsNav() {
     navigate('/Companies')
   };
 
+  const navigateToContacts = () => {
+    navigate("/Contacts")
+  }
+
   return (
     <nav className='navbar'>
       <ul>
@@ -21,7 +25,7 @@ function StatsNav() {
         <li><button onClick={navigateToHome}>Home</button></li>
         <li><button onClick={navigateToStatistics}>Statistics</button></li>
         <li><button onClick={navigateToCompanies}>Companies</button></li>
-
+        <li><button onClick={navigateToContacts}>Contacts</button></li>
       </ul>
     </nav>
   )

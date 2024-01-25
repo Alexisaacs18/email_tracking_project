@@ -3,12 +3,11 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Draggable from 'react-draggable';
 
-function NewForm({newForm,setNewForm}) {
+function NewForm({ newForm, setNewForm }) {
     const formSchema = yup.object({
         email_title: yup.string().required("Email title is required."),
         subject: yup.string().required("Email subject is required."),
         body: yup.string().required("Email body is required."),
-      
     });
 
     const formik = useFormik({
@@ -43,57 +42,57 @@ function NewForm({newForm,setNewForm}) {
                 });
         }
     });
-    function handleExit(){
-        setNewForm(prev=>!newForm)
+    function handleExit() {
+        setNewForm(prev => !newForm)
     }
 
     return (
         <Draggable>
-        <div id="newform">
-            <form onSubmit={formik.handleSubmit}>
-                <div>
-                    <label htmlFor="email_title">Email Title</label>
-                    <input
-                        id="email_title"
-                        name="email_title"
-                        type="text"
-                        onChange={formik.handleChange}
-                        value={formik.values.email_title}
-                        placeholder="Title"
-                    />
-                    {formik.errors.email_title && <div>{formik.errors.email_title}</div>}
-                </div>
+            <div id="newform">
+                <form onSubmit={formik.handleSubmit}>
+                    <div>
+                        <label htmlFor="email_title">Email Title</label>
+                        <input
+                            id="email_title"
+                            name="email_title"
+                            type="text"
+                            onChange={formik.handleChange}
+                            value={formik.values.email_title}
+                            placeholder="Title"
+                        />
+                        {formik.errors.email_title && <div>{formik.errors.email_title}</div>}
+                    </div>
 
-                <div>
-                    <label  htmlFor="subject">Subject</label>
-                    <input
-                        id="subject"
-                        name="subject"
-                        type="text"
-                        onChange={formik.handleChange}
-                        value={formik.values.subject}
-                        placeholder="Subject"
-                    />
-                    {formik.errors.subject && <div>{formik.errors.subject}</div>}
-                </div>
+                    <div>
+                        <label htmlFor="subject">Subject</label>
+                        <input
+                            id="subject"
+                            name="subject"
+                            type="text"
+                            onChange={formik.handleChange}
+                            value={formik.values.subject}
+                            placeholder="Subject"
+                        />
+                        {formik.errors.subject && <div>{formik.errors.subject}</div>}
+                    </div>
 
-                <div>
-                    <label htmlFor="body"></label>
-                    <textarea
-                        id="body"
-                        name="body"
-                        onChange={formik.handleChange}
-                        value={formik.values.body}
-                        placeholder="Compose your email"
-                    />
-                    {formik.errors.body && <div>{formik.errors.body}</div>}
-                </div>
-                <button type="submit">Submit</button>
-                <button type="button" id='newformx'onClick={handleExit}>X</button>
-            </form>
-          
-        </div>
-       </Draggable>
+                    <div>
+                        <label htmlFor="body"></label>
+                        <textarea
+                            id="body"
+                            name="body"
+                            onChange={formik.handleChange}
+                            value={formik.values.body}
+                            placeholder="Compose your email"
+                        />
+                        {formik.errors.body && <div>{formik.errors.body}</div>}
+                    </div>
+                    <button type="submit">Submit</button>
+                    <button type="button" id='newformx' onClick={handleExit}>X</button>
+                </form>
+
+            </div>
+        </Draggable>
     );
 }
 
