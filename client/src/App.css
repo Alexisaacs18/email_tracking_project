@@ -2,48 +2,6 @@
   background-color: white;
   display: flexbox;
 }
-
-.appDark {
-  background-color: black;
-  color: white;
-
-}
-
-.appDark .navbar {
-  background-color: black;
-  color: white;
-  border-bottom: 1px solid grey;
-}
-
-.appDark .navbar button {
-  background-color: black;
-  color: white;
-  border-color: grey;
-}
-
-.appDark #sidebar {
-  background-color: black;
-  border-color: grey;
-}
-
-.appDark #sidebar .email {
-  background-color: black;
-  border-color: grey;
-  box-shadow: 0 1px 1px grey;
-}
-
-.appDark #emailbody {
-  background-color: black;
-  color: white;
-  border-color: grey;
-}
-
-.appDark #searchbar {
-  background-color: black;
-  color: white;
-  border-color: grey;
-}
-
 body {
   overflow-x: hidden;
 }
@@ -218,7 +176,7 @@ body {
   background-color: #45a049;
 }
 
-.newform {
+#newform {
   width: fit-content;
   margin-left: 275px;
   margin-top: 30px;
@@ -234,13 +192,13 @@ form {
   flex-direction: column;
 }
 
-.newform label {
+#newform label {
   font-weight: bold;
   margin-bottom: 5px;
   color: #666;
 }
 
-.newform input,
+#newform input,
 textarea {
   width: 100%;
   padding: 10px;
@@ -251,7 +209,7 @@ textarea {
   outline: none;
 }
 
-.newform button {
+#newform button {
   background-color: #4CAF50;
   color: white;
   padding: 12px;
@@ -261,7 +219,7 @@ textarea {
   font-size: 16px;
 }
 
-.newform #newformx {
+ #newformx {
   background-color: #4CAF50;
   color: white;
   padding: 12px;
