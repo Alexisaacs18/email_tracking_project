@@ -16,13 +16,15 @@ function ContactsCard({ contact }) {
     }, [])
 
     return (
-        <li className="contact-card">
+        <div className="contact-card">
+        <li >
             <div className="contact-card-header">Contact: {contact.contact}</div>
             <div className="contact-card-body">
                 <p>Company: {company.name}</p>
                 <p>Email: {contact.email_address}</p>
             </div>
         </li>
+        </div>
     )
 }
 
