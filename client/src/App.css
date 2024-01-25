@@ -378,7 +378,8 @@ button:hover {
   overflow: hidden;
   transition: box-shadow 0.3s;
   margin-bottom: 20px;
-  /* Space between cards */
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .contact-card-header,
@@ -411,4 +412,10 @@ button:hover {
   align-items: center;
 }
 
-/* Existing styles... */
+#contact-list {
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+  list-style: none;
+  padding: 0;
+}

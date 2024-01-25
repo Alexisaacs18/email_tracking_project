@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ContactsNav from "./ContactsNav";
 import ContactsCard from "./ContactCard";
+import ContactList from "./ContactList";
 
 function ContactsPage() {
 
@@ -19,14 +20,7 @@ function ContactsPage() {
     return (
         <div>
             <ContactsNav />
-            <div className="contact-list">
-                {contacts.map((contact) => (
-                    <ContactsCard
-                        key={contact.id}
-                        contact={contact}
-                    />
-                ))}
-            </div>
+            <ContactList contacts={contacts} />
         </div>
     )
 }

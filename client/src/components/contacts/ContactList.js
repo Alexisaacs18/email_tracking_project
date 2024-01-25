@@ -1,17 +1,17 @@
 import React from 'react';
 import ContactCard from './ContactCard';
 
-function ContactList() {
+function ContactList({ contacts }) {
     return (
-        <ul>
-            <div className="contact-list">
-                {contacts.map((contact) => (
-                    <ContactCard
-                        key={contact.id}
-                        contact={contact}
-                    />
-                ))}
-            </div>
+        <ul id="contact-list">
+            {contacts.map((contact) => (
+                <ContactCard
+                    key={contact.id}
+                    contact={contact}
+                />
+            ))}
         </ul>
     )
 }
+
+export default ContactList;
