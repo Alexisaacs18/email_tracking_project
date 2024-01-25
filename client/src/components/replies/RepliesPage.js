@@ -20,12 +20,14 @@ function RepliesPage() {
     return (
         <div>
             <RepliesNav />
-            {replies.map((reply) => (
-                <RepliesCard
-                    key={reply.id}
-                    reply={reply}
-                />
-            ))}
+            <div className="reply-list">
+                {replies.map((reply) => (
+                    <RepliesCard
+                        key={reply.id}
+                        reply={reply}
+                    />
+                ))}
+            </div>
         </div>
     )
 }

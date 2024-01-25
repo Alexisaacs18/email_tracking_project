@@ -25,10 +25,12 @@ function RepliesCard({ reply }) {
     }, [])
 
     return (
-        <div>
-            <h3>Email: {title.email_title}</h3>
-            <h3>Contact: {contact.contact}</h3>
-            {reply.tone ? <p>Tone: Positive</p> : <p>Tone: Negative</p>}
+        <div className="reply-card">
+            <div className="reply-card-header">Email: {title.email_title}</div>
+            <div className="reply-card-body">
+                <p>Contact: {contact.contact}</p>
+                {reply.tone ? <p>Tone: Positive</p> : <p>Tone: Negative</p>}
+            </div>
         </div>
     )
 }

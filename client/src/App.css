@@ -67,8 +67,8 @@ body {
   position: absolute;
   margin-top: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  background-color:whitesmoke;
+  border: 1px solid black;
+
 }
 
 #sidebar ul {
@@ -296,31 +296,89 @@ button:hover {
   font-size: 16px;
 
 }
-#companyButton-container{
+
+#companyButton-container {
   display: flex;
   justify-content: center;
   margin-top: 15px;
 }
-#companyList-container{
-display: flex;
-justify-content: center;
+
+#companyList-container {
+  display: flex;
+  justify-content: center;
 }
 
 #companies-container {
   background-color: #f8f8f8;
   display: flex;
-  justify-content: center; /* Center horizontally */
- }
- #companyForm-container{
+  justify-content: center;
+  /* Center horizontally */
+}
+
+#companyForm-container {
   display: flex;
   justify-content: center;
- }
+}
 
- #companynewform {
+#companynewform {
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
- }
+
+}
+
+/* Existing styles... */
+
+/* Additional styles for Contacts and Replies pages */
+.contact-card,
+.reply-card {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 300px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.contact-card-header,
+.reply-card-header {
+  background-color: white;
+  color: #333;
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.contact-card-body,
+.reply-card-body {
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 16px;
+  color: #666;
+}
+
+.contact-card:hover,
+.reply-card:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* List container for contacts and replies */
+.contact-list,
+.reply-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact-list {
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+  list-style: none;
+  padding: 0;
+}
