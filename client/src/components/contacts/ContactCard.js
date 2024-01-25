@@ -5,7 +5,7 @@ function ContactsCard({ contact }) {
 
     const url = "http://127.0.0.1:5555"
 
-    const [company, setCompany] = useState([])
+    const [company, setCompany] = useState({})
 
     useEffect(() => {
         fetch(`${url}/companies/${contact.company_id}`)
@@ -17,9 +17,9 @@ function ContactsCard({ contact }) {
 
     return (
         <div>
-            <h3>{contact.contact}</h3>
-            <ul>{company.name}</ul>
-            <p>{contact.email_address}</p>
+            <h3>Contact: {contact.contact}</h3>
+            <ul>Company: {company.name}</ul>
+            <p>Email: {contact.email_address}</p>
         </div>
     )
 }
