@@ -8,7 +8,6 @@ function NewForm({ newForm, setNewForm }) {
         email_title: yup.string().required("Email title is required."),
         subject: yup.string().required("Email subject is required."),
         body: yup.string().required("Email body is required."),
-
     });
 
     const formik = useFormik({
@@ -49,7 +48,7 @@ function NewForm({ newForm, setNewForm }) {
 
     return (
         <Draggable>
-            <div className="newform">
+            <div id="newform">
                 <form onSubmit={formik.handleSubmit}>
                     <div>
                         <label htmlFor="email_title">Email Title</label>
