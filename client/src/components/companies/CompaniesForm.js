@@ -46,7 +46,7 @@ function NewCompanyForm({ companyForm, setCompanyForm }) {
 
     return (
         <Draggable>
-            <div className="newform">
+            <div className="newform" id="companynewform">
                 <form onSubmit={formik.handleSubmit}>
                     <div>
                         <label htmlFor="name">Name</label>

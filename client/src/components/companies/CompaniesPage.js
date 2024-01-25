@@ -27,6 +27,7 @@ function CompaniesPage() {
         <div className="companies-container">
             <CompaniesNav />
             <button id="newcompanybutton" onClick={handleClick}> Add New Company </button>
+            {companyForm && <CompaniesForm />}
             <CompanyList companies={companies} />
         </div>
     )
