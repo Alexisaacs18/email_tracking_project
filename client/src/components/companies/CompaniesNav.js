@@ -18,6 +18,10 @@ function CompaniesNav() {
     navigate("/Contacts")
   }
 
+  const navigateToReplies = () => {
+    navigate("/Replies")
+  }
+
   return (
     <nav className='navbar'>
       <ul>
@@ -26,6 +30,7 @@ function CompaniesNav() {
         <li><button onClick={navigateToStatistics}>Statistics</button></li>
         <li><button onClick={navigateToCompanies}>Companies</button></li>
         <li><button onClick={navigateToContacts}>Contacts</button></li>
+        <li><button onClick={navigateToReplies}>Replies</button></li>
       </ul>
     </nav>
   )
