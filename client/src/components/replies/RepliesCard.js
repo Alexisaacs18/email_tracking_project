@@ -26,13 +26,15 @@ function RepliesCard({ reply }) {
 
     return (
         <div className="reply-card">
-            <div className="reply-card-header">Email: {title.email_title}</div>
-            <div className="reply-card-body">
-                <p>Contact: {contact.contact}</p>
-                {reply.tone ? <p>Tone: Positive</p> : <p>Tone: Negative</p>}
-            </div>
+            <li>
+                <div className="reply-card-header">Email: {title.email_title}</div>
+                <div className="reply-card-body">
+                    <p>Contact: {contact.contact}</p>
+                    {reply.tone ? <p>Tone: Positive</p> : <p>Tone: Negative</p>}
+                </div>
+            </li>
         </div>
     )
 }
 
-export default RepliesCard
+export default RepliesCard;
