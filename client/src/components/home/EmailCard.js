@@ -4,8 +4,10 @@ function EmailCard({ email, toggleComponent, deleteTemplate }) {
 
   const url = "http://127.0.0.1:5555"
 
-  const handleClick = () => {
-    toggleComponent(email)
+  const handleClick = (e) => {
+    if (e.target.tagName.toLowerCase() !== 'button') {
+      toggleComponent(email);
+    }
   }
 
   function handleDelete() {
@@ -20,9 +22,11 @@ function EmailCard({ email, toggleComponent, deleteTemplate }) {
       <div onClick={handleClick}>
         <li className='email'>
           <p>{email.email_title}</p>
+          <button onClick={handleDelete}>X</button>
         </li>
+        
       </div>
-      <button onClick={handleDelete}>X</button>
+      
     </div>
   )
 }
