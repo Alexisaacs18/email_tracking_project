@@ -16,7 +16,7 @@ class Emails(db.Model, SerializerMixin):
     number_unsubscribed = db.Column(db.Integer)
 
     #adds relationships
-    reply = db.relationship('Reply', back_populates = 'email')
+    reply = db.relationship('Reply', back_populates = 'email', cascade = "all,delete")
 
     #adds serialization rules
     serialize_rules = ('-reply.email', )
@@ -53,8 +53,8 @@ class Reply(db.Model, SerializerMixin):
     tone = db.Column(db.Boolean)
 
     #adds relationships
-    recipient = db.relationship('Recipient', back_populates = 'reply')
-    email = db.relationship('Emails', back_populates = 'reply')
+    recipient = db.relationship('Recipient', back_populates = 'reply', cascade = "all,delete")
+    email = db.relationship('Emails', back_populates = 'reply', cascade = "all,delete")
 
     #adds serialization rules
     serialize_rules = ('-emails.reply', '-recipient.reply')
@@ -68,8 +68,8 @@ class Recipient(db.Model, SerializerMixin):
     contact = db.Column(db.String, nullable=False)
 
     #adds relationships
-    reply = db.relationship('Reply', back_populates = 'recipient')
-    company = db.relationship('Company', back_populates = 'recipient')
+    reply = db.relationship('Reply', back_populates = 'recipient', cascade = "all,delete")
+    company = db.relationship('Company', back_populates = 'recipient', cascade = "all,delete")
 
     #adds serialization rules
     serialize_rules = ('-reply.recipient', '-company.recipient')
@@ -83,7 +83,7 @@ class Company(db.Model, SerializerMixin):
     revenue = db.Column(db.String, nullable=False)
 
     #adds relationships
-    recipient = db.relationship('Recipient', back_populates = 'company')
+    recipient = db.relationship('Recipient', back_populates = 'company', cascade = "all,delete")
 
     #adds serialization rules
     serialize_rules = ('-recipient.company', )
