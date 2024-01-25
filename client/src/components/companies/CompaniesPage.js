@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CompaniesNav from './CompaniesNav'
 import CompanyCard from "./CompanyCard"
 import CompaniesForm from "./CompaniesForm"
+import CompanyList from "./CompanyList";
 function CompaniesPage() {
 
     const url = "http://127.0.0.1:5555"
@@ -18,20 +19,15 @@ function CompaniesPage() {
             })
     }, [])
 
+    function handleClick() {
+        setCompanyForm(prev => !companyForm)
+    }
 
     return (
         <div className="companies-container">
             <CompaniesNav />
-            <div className="companies-list">
-                {companies.map((company) => (
-                    <CompanyCard
-                        key={company.id}
-                        name={company.name}
-                        employees={company.employees}
-                        revenue={company.revenue}
-                    />
-                ))}
-            </div>
+            <button id="newcompanybutton" onClick={handleClick}> Add New Company </button>
+            <CompanyList companies={companies} />
         </div>
     )
 }

@@ -4,10 +4,10 @@ function CompanyCard({ name, employees, revenue }) {
 
     return (
         <div className="company-card">
-            <div className="company-card-header">{name}
-                <ul>Employees: {employees}</ul>
-                <ul>Revenue: {revenue}</ul>
-            </div>
+            <li className="company-card-header">{name}
+                <p>Employees: {employees}</p>
+                <p>Revenue: {revenue}</p>
+            </li>
         </div>
     )
 }
