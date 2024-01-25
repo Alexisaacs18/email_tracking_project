@@ -1,15 +1,10 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
-import { Chart } from "chart.js/auto";
-import { CategoryScale } from "chart.js";
-function StatsCard({ title, sent, replied, unsubscribed }) {
+import BarChart from './BarChart'
 
+function StatsCard({ title, sent, replied, unsubscribed }) {
 const replyRate = replied / sent;
 const unsubscribeRate = unsubscribed / sent;
-
-
-
-  const generateChartData = (replyRate,unsubscribeRate) => ({
+const generateChartData = (replyRate,unsubscribeRate) => ({
     labels: ["Rates"],
     datasets: [
       {
@@ -32,16 +27,15 @@ const unsubscribeRate = unsubscribed / sent;
       },
     ],
   });
-
   const chartData = generateChartData(replyRate,unsubscribeRate);
-
+  
   return (
     <div className="statscard">
       <li>{title}</li>
       <li>{`Reply Rate: ${(replied / sent).toFixed(2)}%`}</li>
       <li>{`Unsubscribe Rate: ${(unsubscribed / sent).toFixed(2)}%`}</li>
-      <Bar
-        data={chartData}
+      <BarChart
+        chartData={chartData}
         options={{
           scales: {
             y: {
