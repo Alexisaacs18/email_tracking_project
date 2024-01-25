@@ -24,11 +24,17 @@ function CompaniesPage() {
     }
 
     return (
-        <div className="companies-container">
+        <div>
             <CompaniesNav />
+            <div id ='companyButton-container'>
             <button id="newcompanybutton" onClick={handleClick}> Add New Company </button>
-            {companyForm && <CompaniesForm />}
+            </div>
+            <div id="companyList-container">
             <CompanyList companies={companies} />
+            </div>
+            <div id='companyForm-container'>
+            {companyForm && <CompaniesForm />}
+            </div>
         </div>
     )
 }

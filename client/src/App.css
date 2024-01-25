@@ -276,9 +276,7 @@ button:hover {
   background-color: #45a049;
 }
 
-.companies-container {
-  background-color: #f8f8f8;
-}
+
 
 .companies-list {
   display: flex;
@@ -333,19 +331,33 @@ button:hover {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  margin-left: 900px;
-  margin-top: 10px;
+
+}
+#companyButton-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+#companyList-container{
+display: flex;
+justify-content: center;
 }
 
-#companynewform {
-  width: fit-content;
-  margin-left: 823px;
-  margin-top: 30px;
+#companies-container {
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+ }
+ #companyForm-container{
+  display: flex;
+  justify-content: center;
+ }
+
+ #companynewform {
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* for nick to pull */
+  
+ }
