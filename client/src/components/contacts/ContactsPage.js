@@ -19,15 +19,17 @@ function ContactsPage() {
     return (
         <div>
             <ContactsNav />
-            {contacts.map((contact) => (
-                <ContactsCard
-                    key={contact.id}
-                    contact={contact}
-                />
-            ))}
+            <div className="contact-list">
+                {contacts.map((contact) => (
+                    <ContactsCard
+                        key={contact.id}
+                        contact={contact}
+                    />
+                ))}
+            </div>
         </div>
     )
 }
 
-export default ContactsPage
+export default ContactsPage;
 

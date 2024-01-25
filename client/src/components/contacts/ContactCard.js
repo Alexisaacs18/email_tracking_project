@@ -16,10 +16,12 @@ function ContactsCard({ contact }) {
     }, [])
 
     return (
-        <div>
-            <h3>Contact: {contact.contact}</h3>
-            <ul>Company: {company.name}</ul>
-            <p>Email: {contact.email_address}</p>
+        <div className="contact-card">
+            <div className="contact-card-header">Contact: {contact.contact}</div>
+            <div className="contact-card-body">
+                <p>Company: {company.name}</p>
+                <p>Email: {contact.email_address}</p>
+            </div>
         </div>
     )
 }
