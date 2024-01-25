@@ -20,7 +20,7 @@ function MainPage() {
         console.log("Emails:", emails)
       })
       .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  }, [emails]);
 
 
   const toggleComponent = (email) => {
