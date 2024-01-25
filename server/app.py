@@ -125,24 +125,36 @@ def companies():
 
     return response
 
-@app.route("/emails/<int:id>", methods = ["PATCH"])
+@app.route("/emails/<int:id>", methods = ["PATCH", "DELETE"])
 def emails_by_id(id):
 
     email = Emails.query.filter(Emails.id == id).first()
 
     if email:
 
-        form_data = request.get_json()
+        if request.method == "PATCH":
 
-        for key in form_data:
-            setattr(email, key, form_data[key])
+            form_data = request.get_json()
 
-        db.session.commit()
+            for key in form_data:
+                setattr(email, key, form_data[key])
 
-        response = make_response(
-            email.to_dict(),
-            201
-        )
+            db.session.commit()
+
+            response = make_response(
+                email.to_dict(),
+                201
+            )
+
+        if request.method == "DELETE":
+
+            db.session.delete(email)
+            db.session.commit()
+
+            response = make_response(
+                {},
+                201
+            )
 
     else:
 
