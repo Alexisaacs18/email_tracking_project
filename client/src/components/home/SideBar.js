@@ -13,7 +13,7 @@ function SideBar({ emails, toggleComponent, handleNewPostClick, deleteTemplate }
     <nav id='sidebar'>
       <ul>
         <input placeholder='search' id='searchbar' value={search} onChange={updateSearch}></input>
-        <button onClick={handleNewPostClick} id="composedbutton">NewPost</button>
+        <div id='composedbuttoncontainer'><button onClick={handleNewPostClick} id="composedbutton">NewPost</button></div>
         {filtered.map((email) => (
           <EmailCard
             key={email.id}

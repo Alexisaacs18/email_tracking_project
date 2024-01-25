@@ -67,8 +67,8 @@ body {
   position: absolute;
   margin-top: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid black;
-  
+  border-radius: 5px;
+  background-color:whitesmoke;
 }
 
 #sidebar ul {
@@ -97,6 +97,7 @@ body {
 #searchbar {
   width: 243px;
   height: 25px;
+  outline: none;
 }
 
 #statslist {
@@ -121,11 +122,15 @@ body {
   background-color: white;
   color: black;
 }
-
+#composedbuttoncontainer{
+  display: flex;
+  justify-content: center;
+}
 #composedbutton {
-  width: 250px;
+  width:fit-content;
   height: 25px;
-  border-color: black;
+  margin-top: 5px;
+  margin-bottom: 5px;
   background-color: white;
 }
 
