@@ -53,8 +53,8 @@ class Reply(db.Model, SerializerMixin):
     tone = db.Column(db.Boolean)
 
     #adds relationships
-    recipient = db.relationship('Recipient', back_populates = 'reply', cascade = "all,delete")
-    email = db.relationship('Emails', back_populates = 'reply', cascade = "all,delete")
+    recipient = db.relationship('Recipient', back_populates = 'reply')
+    email = db.relationship('Emails', back_populates = 'reply')
 
     #adds serialization rules
     serialize_rules = ('-emails.reply', '-recipient.reply')
@@ -69,7 +69,7 @@ class Recipient(db.Model, SerializerMixin):
 
     #adds relationships
     reply = db.relationship('Reply', back_populates = 'recipient', cascade = "all,delete")
-    company = db.relationship('Company', back_populates = 'recipient', cascade = "all,delete")
+    company = db.relationship('Company', back_populates = 'recipient')
 
     #adds serialization rules
     serialize_rules = ('-reply.recipient', '-company.recipient')
