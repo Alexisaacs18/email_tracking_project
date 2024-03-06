@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ContactsNav from "./ContactsNav";
 import ContactsCard from "./ContactCard";
 import ContactList from "./ContactList";
+import NewForm from "../home/NewForm";
 
 function ContactsPage() {
 

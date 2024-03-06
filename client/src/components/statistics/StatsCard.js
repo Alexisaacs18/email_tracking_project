@@ -1,10 +1,10 @@
 import React from "react";
-import BarChart from './BarChart'
+import BarChart from "./BarChart";
 
 function StatsCard({ title, sent, replied, unsubscribed }) {
-const replyRate = replied / sent;
-const unsubscribeRate = unsubscribed / sent;
-const generateChartData = (replyRate,unsubscribeRate) => ({
+  const replyRate = replied / sent;
+  const unsubscribeRate = unsubscribed / sent;
+  const generateChartData = (replyRate, unsubscribeRate) => ({
     labels: ["Rates"],
     datasets: [
       {
@@ -27,27 +27,26 @@ const generateChartData = (replyRate,unsubscribeRate) => ({
       },
     ],
   });
-  const chartData = generateChartData(replyRate,unsubscribeRate);
-  
+  const chartData = generateChartData(replyRate, unsubscribeRate);
+
   return (
     <div className="statscard">
       <li>{title}</li>
       <li>{`Reply Rate: ${(replied / sent).toFixed(2)}%`}</li>
       <li>{`Unsubscribe Rate: ${(unsubscribed / sent).toFixed(2)}%`}</li>
       <BarChart
-  chartData={chartData}
-  options={{
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-    maintainAspectRatio: false,
-    responsive: true,
-  }}
-  style={{ height: '30vh', width: '30vw' }} // Adjust the values accordingly
-/>
-
+        chartData={chartData}
+        options={{
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+          maintainAspectRatio: false,
+          responsive: true,
+        }}
+        style={{ height: "30vh", width: "30vw" }}
+      />
     </div>
   );
 }
